@@ -110,8 +110,7 @@ namespace Flight
             if (btnAirline.Visibility == Visibility.Collapsed && btnAirportIDCheck.Visibility == Visibility.Collapsed && btnAirportIDCheck.Visibility == Visibility.Collapsed && btnSettings.Visibility == Visibility.Collapsed)
             {
                 Animate(Image.OpacityProperty, 0.5, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
-                Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
-              //  Animate(Image.OpacityProperty, 0, btnUseLocalisation, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility); 
             }
             else if (btnAirline.Visibility == Visibility.Collapsed && btnSettings.Visibility == Visibility.Collapsed)
             {
@@ -181,5 +180,37 @@ namespace Flight
             lblOptions.Text = "Click For More Options";
         }
         #endregion
+
+        private void outerBtn_Click(object sender, MouseButtonEventArgs e)
+        {
+            Image temp = sender as Image;
+            if(temp.Name == "btnSettings")
+            {
+                /*
+                SettingsWindow window = new SettingsWindow(this);
+                window.Show();
+                this.Hide();
+                */
+            }
+            else
+            {
+                string choice = "";
+                switch(temp.Name)
+                {
+                    case "btnAirportNameCheck":
+                        choice = "Airport Name";
+                        break;
+                    case "btnAirportIDCheck":
+                        choice = "Airport ID";
+                        break;
+                    case "btnAirline":
+                        choice = "Airline Name";
+                        break;
+                }
+                SelectWindow w = new SelectWindow(choice, this);
+                w.Show();
+                this.Hide();
+            }
+        }
     }
 }

@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Flight Tracker" Height="600" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsTabStop="False" WindowStyle="None" Background="#00000000" AllowsTransparency="True" >
     <Grid>
-        <Image x:Name="btnAirportNameCheck"  HorizontalAlignment="Left" Height="248" Margin="86,2,0,0" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave"/>
-        <Image x:Name="btnAirportIDCheck" HorizontalAlignment="Left" Height="248" Margin="86,409,0,-57" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave">
+        <Image x:Name="btnAirportNameCheck"  HorizontalAlignment="Left" Height="248" Margin="86,2,0,0" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave" MouseLeftButtonDown="outerBtn_Click"/>
+        <Image x:Name="btnAirportIDCheck" HorizontalAlignment="Left" Height="248" Margin="86,409,0,-57" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave" MouseLeftButtonDown="outerBtn_Click">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,7 +18,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="btnSettings"  HorizontalAlignment="Left" Height="248" Margin="-117,207,0,0" VerticalAlignment="Top" Width="431" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave">
+        <Image x:Name="btnSettings"  HorizontalAlignment="Left" Height="248" Margin="-117,207,0,0" VerticalAlignment="Top" Width="431" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave" MouseLeftButtonDown="outerBtn_Click">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -28,7 +28,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image x:Name="btnAirline" HorizontalAlignment="Left" Height="248" Margin="286,204,-116,0" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave">
+        <Image x:Name="btnAirline" HorizontalAlignment="Left" Height="248" Margin="286,204,-116,0" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave" MouseLeftButtonDown="outerBtn_Click">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
