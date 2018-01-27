@@ -24,6 +24,7 @@ namespace Flight
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int pageNo;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +32,8 @@ namespace Flight
             Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
             Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
             Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            Animate(Image.OpacityProperty, 0, btnExit, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            this.pageNo = 0;
         }
 
         #region Animation Methods
@@ -57,7 +60,8 @@ namespace Flight
             { "Airport Name", "Files/airportNameLogo.png" },
             { "Airport ID", "Files/airportCodeLogo.png" },
             { "Airline", "Files/airlineLogo.png" },
-            { "Settings", "Files/settingsLogo.png" }
+            { "Settings", "Files/settingsLogo.png" },
+            { "Exit", "Files/exitLogo.png" }
         };
 
         private void ChangeImageSource(string source)
@@ -75,7 +79,7 @@ namespace Flight
                 anim.Completed += new EventHandler(((sender, e) => animation_Complete(sender, postAnim, obj)));
                 if (preAnim != null)
                 {
-                    temp.BeginAnimation(dp, anim);
+                    preAnim.Invoke(obj);
                 }
                 temp.BeginAnimation(dp, anim);
             }
@@ -107,22 +111,35 @@ namespace Flight
         //Main Menu Button
         private void btnMainMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (btnAirline.Visibility == Visibility.Collapsed && btnAirportIDCheck.Visibility == Visibility.Collapsed && btnAirportIDCheck.Visibility == Visibility.Collapsed && btnSettings.Visibility == Visibility.Collapsed)
+            if (this.pageNo == 0)
             {
                 Animate(Image.OpacityProperty, 0.5, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
-                Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility); 
+                Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                this.pageNo++;
             }
-            else if (btnAirline.Visibility == Visibility.Collapsed && btnSettings.Visibility == Visibility.Collapsed)
+            else if (this.pageNo == 1)
             {
                 Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
                 Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
                 Animate(Image.OpacityProperty, 0.5, btnAirline, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
                 Animate(Image.OpacityProperty, 0.5, btnSettings, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                this.pageNo++;
             }
-            else
+            else if (this.pageNo == 2)
             {
                 Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
                 Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animate(Image.OpacityProperty, 0.5, btnExit, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                this.pageNo++;
+            }
+            else
+            {
+                /*
+                Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                */
+                Animate(Image.OpacityProperty, 0, btnExit, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                this.pageNo = 0;
             }
         }
 
@@ -154,6 +171,11 @@ namespace Flight
             {
                 message = "Enter Settings";
                 source = ImagesDict["Settings"];
+            }
+            else if(name == "btnExit")
+            {
+                message = "Exit App";
+                source = ImagesDict["Exit"];
             }
 
             Animate(Image.OpacityProperty, 1, hovered, new TimeSpan(0, 0, 0, 0, 300), preAnim: (o) => { ChangeImageSource(source); });
@@ -211,6 +233,11 @@ namespace Flight
                 w.Show();
                 this.Hide();
             }
+        }
+
+        private void btnExit_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }
