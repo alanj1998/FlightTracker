@@ -100,7 +100,19 @@
     <Resource Include="Files\Circle1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\localiseIcon.png" />
+    <Resource Include="Files\localisationImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\airportNameLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\airportCodeLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\settingsLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\airlineLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

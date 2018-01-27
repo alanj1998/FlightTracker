@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Microsoft.Expression.Drawing;
 using System.Windows.Media.Animation;
 using System.Threading;
+using System.ComponentModel;
 
 namespace Flight
 {
@@ -47,6 +48,22 @@ namespace Flight
                     i.Visibility = Visibility.Visible;
                 }
             }
+        }
+
+        //All images were labelled as free to reuse!
+        private Dictionary<string, string> ImagesDict = new Dictionary<string, string>()
+        {
+            { "Localisation", "Files/localisationImage.png" },
+            { "Airport Name", "Files/airportNameLogo.png" },
+            { "Airport ID", "Files/airportCodeLogo.png" },
+            { "Airline", "Files/airlineLogo.png" },
+            { "Settings", "Files/settingsLogo.png" }
+        };
+
+        private void ChangeImageSource(string source)
+        {
+            Image main = btnUseLocalisation as Image;
+            main.Source = new BitmapImage(new Uri(source, UriKind.Relative));
         }
 
         private void Animate(DependencyProperty dp, double value, object obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
@@ -88,37 +105,25 @@ namespace Flight
         #region Event Handlers
 
         //Main Menu Button
-        private void btnMainMenu_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Animate(Ellipse.OpacityProperty, 1, sender, new TimeSpan(0, 0, 0, 0, 600));  
-        }
-
-        private void btnMainMenu_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Animate(Ellipse.OpacityProperty, 0.5, sender, new TimeSpan(0, 0, 0, 0, 600));
-        }
-
-
         private void btnMainMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (btnAirline.Visibility == Visibility.Collapsed && btnAirportIDCheck.Visibility == Visibility.Collapsed && btnAirportIDCheck.Visibility == Visibility.Collapsed && btnSettings.Visibility == Visibility.Collapsed)
             {
-                Animate(Image.OpacityProperty, 0.5, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), ChangeVisibility);
-                Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), ChangeVisibility);
-                Animate(Image.OpacityProperty, 0, btnUseLocalisation, new TimeSpan(0, 0, 0, 0, 150), ChangeVisibility);
+                Animate(Image.OpacityProperty, 0.5, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+              //  Animate(Image.OpacityProperty, 0, btnUseLocalisation, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
             }
             else if (btnAirline.Visibility == Visibility.Collapsed && btnSettings.Visibility == Visibility.Collapsed)
             {
                 Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
                 Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
-                Animate(Image.OpacityProperty, 0.5, btnAirline, new TimeSpan(0, 0, 0, 0, 150), ChangeVisibility);
-                Animate(Image.OpacityProperty, 0.5, btnSettings, new TimeSpan(0, 0, 0, 0, 150), ChangeVisibility);
+                Animate(Image.OpacityProperty, 0.5, btnAirline, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animate(Image.OpacityProperty, 0.5, btnSettings, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
             }
             else
             {
                 Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
                 Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
-                Animate(Image.OpacityProperty, 1, btnUseLocalisation, new TimeSpan(0, 0, 0, 0, 150), ChangeVisibility);
             }
         }
 
@@ -126,19 +131,33 @@ namespace Flight
         private void outerBtn_MouseEnter(object sender, MouseEventArgs e)
         {
             Image hovered = sender as Image;
-            Animate(Image.OpacityProperty, 1, hovered, new TimeSpan(0, 0, 0, 0, 300));
-            string name = hovered.Name;
-            string message = "";
+            
+            string name = hovered.Name,
+                   message = "",
+                   source = "";
 
             if (name == "btnAirportIDCheck")
+            {
                 message = "Find Flights by Airport ID";
+                source = ImagesDict["Airport ID"];
+            }
             else if (name == "btnAirportNameCheck")
+            {
                 message = "Find Flights by Airport Name";
+                source = ImagesDict["Airport Name"];
+            }
             else if (name == "btnAirline")
+            {
                 message = "Find Flights by Airline Name";
+                source = ImagesDict["Airline"];
+            }
             else if (name == "btnSettings")
+            {
                 message = "Enter Settings";
+                source = ImagesDict["Settings"];
+            }
 
+            Animate(Image.OpacityProperty, 1, hovered, new TimeSpan(0, 0, 0, 0, 300), preAnim: (o) => { ChangeImageSource(source); });
             lblOptions.Text = message;
         }
 
@@ -147,6 +166,7 @@ namespace Flight
             Image hovered = sender as Image;
             Animate(Image.OpacityProperty, 0.5, hovered, new TimeSpan(0, 0, 0, 0, 300));
             lblOptions.Text = "Click For More Options";
+            ChangeImageSource(ImagesDict["Localisation"]);
         }
 
         //Inner localisation button

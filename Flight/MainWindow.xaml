@@ -38,10 +38,10 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Ellipse x:Name="btnMainMenu" Fill="#FFABABD6" HorizontalAlignment="Left" Height="300" Margin="150,150,0,0" Stroke="#7F000000" VerticalAlignment="Top" Width="300" MouseEnter="btnMainMenu_MouseEnter" MouseLeave="btnMainMenu_MouseLeave" Opacity="0.75" MouseLeftButtonUp="btnMainMenu_MouseLeftButtonUp"/>
-        <Image x:Name="btnUseLocalisation" Source="Files/localiseIcon.png" Margin="226,198,226,280" OpacityMask="Black" MouseEnter="btnUseLocalisation_MouseEnter" MouseLeave="btnUseLocalisation_MouseLeave"></Image>
+        <Ellipse x:Name="btnMainMenu" Fill="#3892ed" HorizontalAlignment="Left" Height="300" Margin="150,150,0,0" Stroke="#3892ed" VerticalAlignment="Top" Width="300" MouseLeftButtonUp="btnMainMenu_MouseLeftButtonUp"/>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Name="btnUseLocalisation" Source="Files/localisationImage.png" Margin="226,198,226,280" OpacityMask="Black" MouseEnter="btnUseLocalisation_MouseEnter" MouseLeave="btnUseLocalisation_MouseLeave"></Image>
         <Label HorizontalAlignment="Left" Margin="226,325,0,0" VerticalAlignment="Top" Height="85" Width="148" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="14">
-            <TextBlock x:Name="lblOptions" TextWrapping="WrapWithOverflow">
+            <TextBlock x:Name="lblOptions" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Bodoni MT" FontSize="16">
                 Click For More Options
             </TextBlock>
         </Label>
