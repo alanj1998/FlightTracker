@@ -1,0 +1,50 @@
+﻿<Window x:Class="Flight.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flight"
+        mc:Ignorable="d"
+        Title="Flight Tracker" Height="600" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" IsTabStop="False" WindowStyle="None" Background="#00000000" AllowsTransparency="True" >
+    <Grid>
+        <Image x:Name="btnAirportNameCheck"  HorizontalAlignment="Left" Height="248" Margin="86,2,0,0" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave"/>
+        <Image x:Name="btnAirportIDCheck" HorizontalAlignment="Left" Height="248" Margin="86,409,0,-57" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="btnSettings"  HorizontalAlignment="Left" Height="248" Margin="-117,207,0,0" VerticalAlignment="Top" Width="431" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="270"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="btnAirline" HorizontalAlignment="Left" Height="248" Margin="286,204,-116,0" VerticalAlignment="Top" Width="430" Source="Files/Circle1.png" RenderTransformOrigin="0.5,0.5" MouseEnter="outerBtn_MouseEnter" MouseLeave="outerBtn_MouseLeave">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Ellipse x:Name="btnMainMenu" Fill="#FFABABD6" HorizontalAlignment="Left" Height="300" Margin="150,150,0,0" Stroke="#7F000000" VerticalAlignment="Top" Width="300" MouseEnter="btnMainMenu_MouseEnter" MouseLeave="btnMainMenu_MouseLeave" Opacity="0.75" MouseLeftButtonUp="btnMainMenu_MouseLeftButtonUp"/>
+        <Image x:Name="btnUseLocalisation" Source="Files/localiseIcon.png" Margin="226,198,226,280" OpacityMask="Black" MouseEnter="btnUseLocalisation_MouseEnter" MouseLeave="btnUseLocalisation_MouseLeave"></Image>
+        <Label HorizontalAlignment="Left" Margin="226,325,0,0" VerticalAlignment="Top" Height="85" Width="148" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Times New Roman" FontSize="14">
+            <TextBlock x:Name="lblOptions" TextWrapping="WrapWithOverflow">
+                Click For More Options
+            </TextBlock>
+        </Label>
+
+    </Grid>
+</Window>
