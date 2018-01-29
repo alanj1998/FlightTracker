@@ -32,12 +32,12 @@ namespace Flight
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
-            CloseWindow();
+            this.Close();
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
-            CloseWindow();
+            this.Close();
         }
 
         public void ErrorMessage(bool isEmpty)
@@ -47,7 +47,7 @@ namespace Flight
                 MessageBoxResult result = MessageBox.Show($"{txBoxChoice.Text} {this.choice} was not found!\nTry Again?", "Search Error!", MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
                 if (result == MessageBoxResult.No)
                 {
-                    CloseWindow();
+                    this.Close();
                 }
             }
             else
@@ -56,23 +56,21 @@ namespace Flight
             }
         }
 
-        private void CloseWindow()
-        {
-            this.main.Show();
-            this.Close();
-        }
-
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             if(txBoxChoice.Text != "")
             {
-
+                this.main.Hide();
+                this.Close();
+                /*
+                FlightWindow flight = new FlightWindow();
+                flight.Show();
+                */
             }
             else
             {
                 ErrorMessage(true);
-            }
-            //For testing ErrorMessage()
+            } //For testing ErrorMessage()
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)

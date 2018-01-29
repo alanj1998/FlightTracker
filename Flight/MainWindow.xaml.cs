@@ -71,7 +71,7 @@ namespace Flight
             { "Localisation", "Files/localisationImage.png" },
             { "Airport Name", "Files/airportNameLogo.png" },
             { "Airport ID", "Files/airportCodeLogo.png" },
-            { "Airline", "Files/airlineLogo.png" },
+            { "Airline Name", "Files/airlineLogo.png" },
             { "Settings", "Files/settingsLogo.png" },
             { "Exit", "Files/exitLogo.png" }
         };
@@ -87,7 +87,7 @@ namespace Flight
 
         #region Event Handlers
         //Main Menu Button
-        private void btnMainMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void btnMainMenu_Click(object sender, MouseButtonEventArgs e)
         {
             if (this.pageNo == 0)
             {
@@ -138,7 +138,7 @@ namespace Flight
             else if (name == "btnAirline")
             {
                 message = "Find Flights by Airline Name";
-                source = ImagesDict["Airline"];
+                source = ImagesDict["Airline Name"];
             }
             else if (name == "btnSettings")
             {
@@ -181,6 +181,23 @@ namespace Flight
         private void outerBtn_Click(object sender, MouseButtonEventArgs e)
         {
             Image temp = sender as Image;
+            string choice = "";
+            switch (temp.Name)
+            {
+                case "btnAirportNameCheck":
+                    choice = "Airport Name";
+                    break;
+                case "btnAirportIDCheck":
+                    choice = "Airport ID";
+                    break;
+                case "btnAirline":
+                    choice = "Airline Name";
+                    break;
+                case "btnSettings":
+                    choice = "Settings";
+                    break; 
+            }
+
             if (temp.Name == "btnSettings")
             {
                 /*
@@ -191,22 +208,13 @@ namespace Flight
             }
             else
             {
-                string choice = "";
-                switch (temp.Name)
-                {
-                    case "btnAirportNameCheck":
-                        choice = "Airport Name";
-                        break;
-                    case "btnAirportIDCheck":
-                        choice = "Airport ID";
-                        break;
-                    case "btnAirline":
-                        choice = "Airline Name";
-                        break;
-                }
+                
                 SelectWindow w = new SelectWindow(choice, this);
                 w.ShowDialog();
             }
+
+            temp.Opacity = 100;
+            ChangeImageSource(ImagesDict[choice]);
         }
 
         //When the Exit button is clicked, terminate the app
