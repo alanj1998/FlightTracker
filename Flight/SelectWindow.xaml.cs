@@ -74,5 +74,10 @@ namespace Flight
             }
             //For testing ErrorMessage()
         }
+
+        private void btnClose_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
