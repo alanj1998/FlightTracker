@@ -5,11 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flight"
         mc:Ignorable="d"
-        Title="Flights Options" Height="123.373" Width="377.219" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Unloaded="Window_Unloaded">
+        Title="Flights Options" Height="123" Width="377" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Unloaded="Window_Unloaded" AllowsTransparency="True" WindowStyle="None">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEC3C3C" Offset="0.671"/>
+            <GradientStop Color="#CCE00000" Offset="0.936"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <Label x:Name="lblEnter" Content="Enter " HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="23" Margin="168,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181"/>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="79,60,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
-        <Button x:Name="btnMainMenu" Content="Back to Main Menu" HorizontalAlignment="Left" Margin="159,60,0,0" VerticalAlignment="Top" Width="116" Click="btnMainMenu_Click"/>
+        <!-- Layout of the Window -->
+        <Rectangle HorizontalAlignment="Left" Height="30" Stroke="#FF3892ED" VerticalAlignment="Top" Width="377">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="164,42,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image x:Name="btnClose" Source="Files/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="339,0,0,93" MouseLeftButtonDown="btnClose_Click"></Image>
+        <Label x:Name="lblTitle" Content="Add Flight Details" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="30" FontSize="14.667" Margin="10,0,237,93"/>
+
+        <!-- Controls -->
+        <Label x:Name="lblEnter" Content="Enter " HorizontalAlignment="Left" Margin="16,43,0,0" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="20" Margin="168,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199">
+            <TextBox.Background>
+                <SolidColorBrush Color="#00000000" Opacity="0"/>
+            </TextBox.Background>
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#00000000" Opacity="0"/>
+            </TextBox.BorderBrush>
+            <TextBox.SelectionBrush>
+                <SolidColorBrush Opacity="0"/>
+            </TextBox.SelectionBrush>
+        </TextBox>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="85,85,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
+        <Button x:Name="btnMainMenu" Content="Back to Main Menu" HorizontalAlignment="Left" Margin="165,85,0,0" VerticalAlignment="Top" Width="116" Click="btnMainMenu_Click"/>
     </Grid>
 </Window>
