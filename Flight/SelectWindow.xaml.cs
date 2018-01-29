@@ -58,14 +58,12 @@ namespace Flight
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            if(txBoxChoice.Text != "")
+            if (txBoxChoice.Text != "")
             {
                 this.main.Hide();
                 this.Close();
-                /*
-                FlightWindow flight = new FlightWindow();
+                FlightsWindow flight = new FlightsWindow(main);
                 flight.Show();
-                */
             }
             else
             {
@@ -76,6 +74,17 @@ namespace Flight
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+        }
+
+
+        private void btnSearch_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Animation.Animate(TextBlock.PaddingProperty, new Thickness(130,3,0,0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = "...Search"; });
+        }
+
+        private void btnSearch_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Animation.Animate(TextBlock.PaddingProperty, new Thickness(5, 3, 0, 0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = "Search"; });
         }
     }
 }

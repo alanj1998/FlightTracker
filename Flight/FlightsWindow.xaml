@@ -1,0 +1,22 @@
+﻿<Window x:Class="Flight.FlightsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Flight"
+        mc:Ignorable="d"
+        Title="FlightsWindow" Height="600" Width="900" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="53" Stroke="#FF3892ED" VerticalAlignment="Top" Width="900">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image x:Name="btnClose" Source="Files/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="843,0,0,547" MouseLeftButtonDown="btnClose_Click"></Image>
+        <Label x:Name="lblTitle" Content="Flight Details" HorizontalAlignment="Center" VerticalAlignment="Center" Width="245" Height="30" FontSize="14.667" Margin="10,10,645,560"/>
+        <Label x:Name="lblTime" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="110" Height="30" FontSize="20" Margin="385,12,405,558" FontFamily="Arial Black"/>
+    </Grid>
+</Window>

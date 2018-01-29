@@ -30,18 +30,18 @@ namespace Flight
             anim - the Animation object used for animating menus
         */
         private int pageNo;
-        private Animation anim = new Animation();
+        //private Animation anim = new Animation();
 
         public MainWindow()
         {
             InitializeComponent();
 
             //Change all outerMenu buttons to opacity of 0
-            anim.Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
-            anim.Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
-            anim.Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
-            anim.Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
-            anim.Animate(Image.OpacityProperty, 0, btnExit, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            Animation.Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            Animation.Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            Animation.Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            Animation.Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
+            Animation.Animate(Image.OpacityProperty, 0, btnExit, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
 
             //Set first page to 0
             this.pageNo = 0;
@@ -91,28 +91,28 @@ namespace Flight
         {
             if (this.pageNo == 0)
             {
-                anim.Animate(Image.OpacityProperty, 0.5, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
-                anim.Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0.5, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0.5, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
                 this.pageNo++;
             }
             else if (this.pageNo == 1)
             {
-                anim.Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
-                anim.Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
-                anim.Animate(Image.OpacityProperty, 0.5, btnAirline, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
-                anim.Animate(Image.OpacityProperty, 0.5, btnSettings, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0, btnAirportNameCheck, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0.5, btnAirline, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0.5, btnSettings, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
                 this.pageNo++;
             }
             else if (this.pageNo == 2)
             {
-                anim.Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
-                anim.Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
-                anim.Animate(Image.OpacityProperty, 0.5, btnExit, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0, btnAirline, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0, btnSettings, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0.5, btnExit, new TimeSpan(0, 0, 0, 0, 150), preAnim: ChangeVisibility);
                 this.pageNo++;
             }
             else
             {
-                anim.Animate(Image.OpacityProperty, 0, btnExit, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
+                Animation.Animate(Image.OpacityProperty, 0, btnExit, new TimeSpan(0, 0, 0, 0, 150), postAnim: ChangeVisibility);
                 this.pageNo = 0;
             }
         }
@@ -151,7 +151,7 @@ namespace Flight
                 source = ImagesDict["Exit"];
             }
 
-            anim.Animate(Image.OpacityProperty, 1, hovered, new TimeSpan(0, 0, 0, 0, 300), preAnim: (o) => { ChangeImageSource(source); });
+            Animation.Animate(Image.OpacityProperty, 1, hovered, new TimeSpan(0, 0, 0, 0, 300), preAnim: (o) => { ChangeImageSource(source); });
             lblOptions.Text = message;
         }
 
@@ -159,7 +159,7 @@ namespace Flight
         private void outerBtn_MouseLeave(object sender, MouseEventArgs e)
         {
             Image hovered = sender as Image;
-            anim.Animate(Image.OpacityProperty, 0.5, hovered, new TimeSpan(0, 0, 0, 0, 300));
+            Animation.Animate(Image.OpacityProperty, 0.5, hovered, new TimeSpan(0, 0, 0, 0, 300));
             lblOptions.Text = "Click For More Options";
             ChangeImageSource(ImagesDict["Localisation"]);
         }
@@ -167,7 +167,7 @@ namespace Flight
         //Inner localisation button
         private void btnUseLocalisation_MouseEnter(object sender, MouseEventArgs e)
         {
-            anim.Animate(Image.OpacityProperty, 1, btnMainMenu, new TimeSpan(0, 0, 0, 0, 300));
+            Animation.Animate(Image.OpacityProperty, 1, btnMainMenu, new TimeSpan(0, 0, 0, 0, 300));
             lblOptions.Text = "Click to Find Flights Near You";
         }
 
@@ -212,9 +212,6 @@ namespace Flight
                 SelectWindow w = new SelectWindow(choice, this);
                 w.ShowDialog();
             }
-
-            temp.Opacity = 100;
-            ChangeImageSource(ImagesDict[choice]);
         }
 
         //When the Exit button is clicked, terminate the app

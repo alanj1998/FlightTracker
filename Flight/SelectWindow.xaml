@@ -35,7 +35,7 @@
 
         <!-- Controls -->
         <Label x:Name="lblEnter" Content="Enter " HorizontalAlignment="Left" Margin="16,43,0,0" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="20" Margin="168,46,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="199">
+        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="26" Margin="164,43,0,0" TextWrapping="Wrap" Text="" Padding="3,3,0,0" VerticalAlignment="Top" Width="206">
             <TextBox.Background>
                 <SolidColorBrush Color="#00000000" Opacity="0"/>
             </TextBox.Background>
@@ -46,7 +46,14 @@
                 <SolidColorBrush Opacity="0"/>
             </TextBox.SelectionBrush>
         </TextBox>
-        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="85,85,0,0" VerticalAlignment="Top" Width="75" Click="btnSearch_Click"/>
-        <Button x:Name="btnMainMenu" Content="Back to Main Menu" HorizontalAlignment="Left" Margin="165,85,0,0" VerticalAlignment="Top" Width="116" Click="btnMainMenu_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="87,81,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock x:Name="btnSearch" HorizontalAlignment="Left" Margin="87,81,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Height="28" Width="206" FontSize="16" Padding="5,3,0,0" MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
     </Grid>
 </Window>

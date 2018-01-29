@@ -57,9 +57,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Animate.cs" />
+    <Compile Include="FlightsWindow.xaml.cs">
+      <DependentUpon>FlightsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectWindow.xaml.cs">
       <DependentUpon>SelectWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="FlightsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
