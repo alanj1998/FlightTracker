@@ -17,7 +17,7 @@ using System.Windows.Media.Animation;
 using System.Threading;
 using System.ComponentModel;
 
-namespace Flight
+namespace FlightTracker
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

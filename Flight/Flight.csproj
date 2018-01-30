@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Animate.cs" />
+    <Compile Include="Flight.cs" />
     <Compile Include="FlightDetails.xaml.cs">
       <DependentUpon>FlightDetails.xaml</DependentUpon>
     </Compile>

@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace Flight
+namespace FlightTracker
 {
     static class Animation
     {
@@ -18,7 +18,7 @@ namespace Flight
         */
 
         //Animating an Ellipse with a double based dependence
-        static public void Animate(DependencyProperty dp, double value, Ellipse obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
+        static public void Animate(DependencyProperty dp, double value, UIElement obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
         {
             DoubleAnimation anim = new DoubleAnimation(value, t);
             anim.Completed += new EventHandler(((sender, e) => animation_Complete(sender, postAnim, obj)));
@@ -29,10 +29,9 @@ namespace Flight
             obj.BeginAnimation(dp, anim);
         }
 
-        //Animating an image with a double based dependency
-        static public void Animate(DependencyProperty dp, double value, Image obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
+        static public void Animate(DependencyProperty dp, Thickness value, UIElement obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
         {
-            DoubleAnimation anim = new DoubleAnimation(value, t);
+            ThicknessAnimation anim = new ThicknessAnimation(value, t);
             anim.Completed += new EventHandler(((sender, e) => animation_Complete(sender, postAnim, obj)));
             if (preAnim != null)
             {
@@ -41,17 +40,6 @@ namespace Flight
             obj.BeginAnimation(dp, anim);
         }
 
-        //Animating a TextBlock with a thickness dependency
-        static public void Animate(DependencyProperty dp, Thickness thickness, TextBlock obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
-        {
-            ThicknessAnimation anim = new ThicknessAnimation(thickness, t);
-            anim.Completed += new EventHandler(((sender, e) => animation_Complete(sender, postAnim, obj)));
-            if (preAnim != null)
-            {
-                preAnim.Invoke(obj);
-            }
-            obj.BeginAnimation(dp, anim);
-        }
 
         //Once animation is complete
         static private void animation_Complete(object sender, Action<object> doSomething, object obj)

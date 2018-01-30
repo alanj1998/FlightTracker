@@ -13,39 +13,36 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Flight
+namespace FlightTracker
 {
     /// <summary>
     /// Interaction logic for FlightDetails.xaml
     /// </summary>
-    public partial class FlightDetails : UserControl
+    public partial class FlightDetails : UserControl, IComparable
     {
-        private DateTime time;
-        private string airlineCode;
-        private Uri pathToLogo;
-        private string town;
+        private Flight flight; 
 
-        public FlightDetails(DateTime time, string airlineCode, string town, Uri logo = null)
+        public FlightDetails(Flight flight)
         {
             InitializeComponent();
-            this.time = time;
-            this.airlineCode = airlineCode;
-            this.town = town;
 
-            if (logo == null)
-                this.pathToLogo = new Uri("Files/airlineLogo.png", UriKind.Relative);
-            else
-                this.pathToLogo = logo;
-
+            this.flight = flight;
             SetFlightInfo();
         }
 
+        public int CompareTo(object obj)
+        {
+            FlightDetails temp = obj as FlightDetails;
+            return this.flight.Time.CompareTo(temp.flight.Time);
+        }
+
+        //Set up the view of the flight
         private void SetFlightInfo()
         {
-            txBlockAirlineCode.Text = this.airlineCode;
-            txBlockTime.Text = $"{this.time.Hour}:{this.time.Minute}";
-            txBlockTown.Text = this.town;
-            imageLogo.Source = new BitmapImage(this.pathToLogo);
+            txBlockAirlineCode.Text = this.flight.AirlineCode;
+            txBlockTime.Text = $"{this.flight.Time.Hour}:{this.flight.Time.Minute}";
+            txBlockTown.Text = this.flight.Town;
+            imageLogo.Source = new BitmapImage(this.flight.PathToLogo);
         }
     }
 }

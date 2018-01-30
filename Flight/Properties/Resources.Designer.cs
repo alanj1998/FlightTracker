@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Flight.Properties
+namespace FlightTracker.Properties
 {
 
 
