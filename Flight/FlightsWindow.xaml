@@ -6,6 +6,12 @@
         xmlns:local="clr-namespace:Flight"
         mc:Ignorable="d"
         Title="FlightsWindow" Height="600" Width="900" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFD82727" Offset="0"/>
+            <GradientStop Color="#FFEE0909" Offset="0.61"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="53" Stroke="#FF3892ED" VerticalAlignment="Top" Width="900">
             <Rectangle.Fill>
@@ -17,6 +23,171 @@
         </Rectangle>
         <Image x:Name="btnClose" Source="Files/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="843,0,0,547" MouseLeftButtonDown="btnClose_Click"></Image>
         <Label x:Name="lblTitle" Content="Flight Details" HorizontalAlignment="Center" VerticalAlignment="Center" Width="245" Height="30" FontSize="14.667" Margin="10,10,645,560"/>
-        <Label x:Name="lblTime" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="110" Height="30" FontSize="20" Margin="385,12,405,558" FontFamily="Arial Black"/>
+        <Label x:Name="lblTime" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="140" Height="30" FontSize="20" Margin="380,12,373,558" FontFamily="Arial Black"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Stroke="#FF3892ED" VerticalAlignment="Top" Width="400" Margin="250,51,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label x:Name="lblAirportName" Content="Airport Name" HorizontalAlignment="Left" Margin="260,60,0,0" VerticalAlignment="Top" Width="134" FontFamily="Century Gothic" FontSize="14.667"/>
+        <Label x:Name="lblAirportID" Content="Airport ID" HorizontalAlignment="Left" Margin="260,86,0,0" VerticalAlignment="Top" Width="134" FontFamily="Century Gothic" FontSize="14.667"/>
+        <Label x:Name="lblAirportLocalisation" Content="Airport Location" HorizontalAlignment="Left" Margin="260,112,0,0" VerticalAlignment="Top" Width="134" FontFamily="Century Gothic" FontSize="14.667"/>
+        <TextBlock x:Name="txBlockAirportName" HorizontalAlignment="Left" Margin="394,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242"/>
+        <TextBlock x:Name="txBlockAirportID" HorizontalAlignment="Left" Margin="394,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242"/>
+        <TextBlock x:Name="txBlockAirportLocation" HorizontalAlignment="Left" Margin="394,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242"/>
+        <StackPanel x:Name="Departures" HorizontalAlignment="Left" Height="400" Margin="26,190,0,0" VerticalAlignment="Top" Width="400">
+            <Rectangle Height="40" Width="400" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+        </StackPanel>
+
+        <StackPanel x:Name="Arrivals" HorizontalAlignment="Left" Height="400" Margin="470,190,0,0" VerticalAlignment="Top" Width="400">
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+            <Rectangle Height="40" Stroke="#FF3892ED">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000"/>
+        </StackPanel>
+        <Label x:Name="lblDepartures" Content="Departures" HorizontalAlignment="Left" Margin="158,156,0,0" VerticalAlignment="Top" Width="115" Height="35" FontSize="18.667" FontFamily="Century Gothic"/>
+        <Label x:Name="lblArrivals" Content="Arrivals" HorizontalAlignment="Left" Margin="634,156,0,0" VerticalAlignment="Top" Width="78" Height="35" FontSize="18.667" FontFamily="Century Gothic"/>
     </Grid>
 </Window>

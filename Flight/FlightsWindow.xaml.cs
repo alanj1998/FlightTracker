@@ -21,7 +21,7 @@ namespace Flight
     public partial class FlightsWindow : Window
     {
         private MainWindow MainMenu;
-        private Timer timer = new Timer();
+        private Timer clockTimer = new Timer();
         public FlightsWindow(MainWindow main)
         {
             InitializeComponent();
@@ -30,19 +30,19 @@ namespace Flight
             this.MainMenu = main;
 
             //Setting up the Timer
-            timer.Interval = 1000;
-            timer.Elapsed += timer_Elapsed;
-            timer.AutoReset = true;
-            timer.Start();    
+            clockTimer.Interval = 1000;
+            clockTimer.Elapsed += clockTimer_Elapsed;
+            clockTimer.AutoReset = true;
+            clockTimer.Start();
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
-            MainMenu.Show();
+            MainMenu.Show(); 
         }
 
-        private void timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void clockTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             //Using Dispatcher to update the UI thread
             Dispatcher.Invoke(() =>

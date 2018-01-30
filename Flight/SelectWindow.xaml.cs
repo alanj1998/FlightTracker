@@ -30,11 +30,6 @@ namespace Flight
             lblEnter.Content += this.choice;
         }
 
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
             this.Close();
