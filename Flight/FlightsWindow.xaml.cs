@@ -34,6 +34,9 @@ namespace Flight
             clockTimer.Elapsed += clockTimer_Elapsed;
             clockTimer.AutoReset = true;
             clockTimer.Start();
+
+            FlightDetails f = new FlightDetails(DateTime.Now, "FR999", "Manorhamilton");
+            Departures.Children.Add(f);
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
