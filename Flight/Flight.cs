@@ -49,7 +49,7 @@ namespace FlightTracker
             this.town = town;
 
             if (logo == null)
-                this.pathToLogo = new Uri("Files/airlineLogo.png", UriKind.Relative);
+                this.pathToLogo = new Uri("Assets/Images/airlineLogo.png", UriKind.Relative);
             else
                 this.pathToLogo = logo;
         }

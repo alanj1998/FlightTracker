@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Diagnostics;
 
 namespace FlightTracker
 {
@@ -40,6 +39,8 @@ namespace FlightTracker
             clockTimer.Elapsed += clockTimer_Elapsed;
             clockTimer.AutoReset = true;
             clockTimer.Start();
+
+            /* Test Data */
             departureFlights = new List<FlightDetails>() {
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "Barcelona")),
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "Mad")),
@@ -89,7 +90,6 @@ namespace FlightTracker
             ChangePage();
             AddFlights(this.departureFlights, Departures);
             AddFlights(this.arrivalFlights, Arrivals);
-            Debug.WriteLine($"The value of PageNo is {this.pageNo}");
         }
 
         private void SetFlights()
@@ -113,9 +113,9 @@ namespace FlightTracker
             int pages = 0;
 
             if (this.arrivalFlights.Count > this.departureFlights.Count)
-                noOfFlights = this.arrivalFlights.Count;
-            else
                 noOfFlights = this.departureFlights.Count;
+            else
+                noOfFlights = this.arrivalFlights.Count;
 
             pages = (int)Math.Floor(noOfFlights / MAX_NUMBER_PER_PAGE);
 
@@ -135,8 +135,6 @@ namespace FlightTracker
                     Departures.Children.RemoveAt(0);
                     Arrivals.Children.RemoveAt(0);
                 }
-
-                Debug.WriteLine($"List of departures = {Departures.Children.Count}");
             });
         }
 
@@ -145,8 +143,6 @@ namespace FlightTracker
             int lastFlightIndex = GetLastIndex();
             if (lastFlightIndex > l.Count)
                 lastFlightIndex = l.Count;
-
-            Debug.WriteLine($"Last Flight Index is {lastFlightIndex}");
 
             Dispatcher.Invoke(() =>
             {

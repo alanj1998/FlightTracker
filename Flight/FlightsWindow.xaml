@@ -21,7 +21,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image x:Name="btnClose" Source="Files/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="843,0,0,547" MouseLeftButtonDown="btnClose_Click"></Image>
+        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="843,0,0,547" MouseLeftButtonDown="btnClose_Click"></Image>
         <Label x:Name="lblTitle" Content="Flight Details" HorizontalAlignment="Center" VerticalAlignment="Center" Width="245" Height="30" FontSize="14.667" Margin="10,10,645,560"/>
         <Label x:Name="lblTime" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="140" Height="30" FontSize="20" Margin="380,12,373,558" FontFamily="Arial Black"/>
         <Rectangle HorizontalAlignment="Left" Height="100" Stroke="#FF3892ED" VerticalAlignment="Top" Width="400" Margin="250,51,0,0">

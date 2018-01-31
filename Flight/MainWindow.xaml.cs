@@ -35,6 +35,8 @@ namespace FlightTracker
         public MainWindow()
         {
             InitializeComponent();
+            UserSettings user = new UserSettings();
+            SetResourceFile(user.Language);
 
             //Change all outerMenu buttons to opacity of 0
             Animation.Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
@@ -68,12 +70,12 @@ namespace FlightTracker
         //All images were labelled as free to reuse! A dictionary of Image Files
         private Dictionary<string, string> ImagesDict = new Dictionary<string, string>()
         {
-            { "Localisation", "Files/localisationImage.png" },
-            { "Airport Name", "Files/airportNameLogo.png" },
-            { "Airport ID", "Files/airportCodeLogo.png" },
-            { "Airline Name", "Files/airlineLogo.png" },
-            { "Settings", "Files/settingsLogo.png" },
-            { "Exit", "Files/exitLogo.png" }
+            { "Localisation", "Assets/Images/localisationImage.png" },
+            { "Airport Name", "Assets/Images/airportNameLogo.png" },
+            { "Airport ID", "Assets/Images/airportCodeLogo.png" },
+            { "Airline Name", "Assets/Images/airlineLogo.png" },
+            { "Settings", "Assets/Images/settingsLogo.png" },
+            { "Exit", "Assets/Images/exitLogo.png" }
         };
 
         //Change the source of the image to change the displayed image
@@ -127,27 +129,28 @@ namespace FlightTracker
 
             if (name == "btnAirportIDCheck")
             {
-                message = "Find Flights by Airport ID";
+                message = Application.Current.Resources["clickAirportID"].ToString();
+
                 source = ImagesDict["Airport ID"];
             }
             else if (name == "btnAirportNameCheck")
             {
-                message = "Find Flights by Airport Name";
+                message = Application.Current.Resources["clickAirportName"].ToString();
                 source = ImagesDict["Airport Name"];
             }
             else if (name == "btnAirline")
             {
-                message = "Find Flights by Airline Name";
+                message = Application.Current.Resources["clickAirline"].ToString();
                 source = ImagesDict["Airline Name"];
             }
             else if (name == "btnSettings")
             {
-                message = "Enter Settings";
+                message = Application.Current.Resources["settings"].ToString();
                 source = ImagesDict["Settings"];
             }
             else if(name == "btnExit")
             {
-                message = "Exit App";
+                message = Application.Current.Resources["exit"].ToString();
                 source = ImagesDict["Exit"];
             }
 
@@ -160,7 +163,7 @@ namespace FlightTracker
         {
             Image hovered = sender as Image;
             Animation.Animate(Image.OpacityProperty, 0.5, hovered, new TimeSpan(0, 0, 0, 0, 300));
-            lblOptions.Text = "Click For More Options";
+            lblOptions.Text = Application.Current.Resources["clickMore"].ToString();
             ChangeImageSource(ImagesDict["Localisation"]);
         }
 
@@ -174,7 +177,7 @@ namespace FlightTracker
         //When the mouse is no longer hovering over localisation button, change the text to click for more options
         private void btnUseLocalisation_MouseLeave(object sender, MouseEventArgs e)
         {
-            lblOptions.Text = "Click For More Options";
+            lblOptions.Text = Application.Current.Resources["clickMore"].ToString();
         }
 
         //Once the outer button is clicked, determine what button was clicked and do the corresponding action
@@ -185,17 +188,14 @@ namespace FlightTracker
             switch (temp.Name)
             {
                 case "btnAirportNameCheck":
-                    choice = "Airport Name";
+                    choice = "airportName";
                     break;
                 case "btnAirportIDCheck":
-                    choice = "Airport ID";
+                    choice = "airportID";
                     break;
                 case "btnAirline":
-                    choice = "Airline Name";
+                    choice = "airlineName";
                     break;
-                case "btnSettings":
-                    choice = "Settings";
-                    break; 
             }
 
             if (temp.Name == "btnSettings")
@@ -219,6 +219,15 @@ namespace FlightTracker
         {
             this.Close();
         }
-        #endregion  
+        #endregion
+
+        private void SetResourceFile(string Language)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+
+            ResourceDictionary lang = new ResourceDictionary();
+            lang.Source = new Uri($"Assets/Languages/{Language}.xaml", UriKind.Relative);
+            Application.Current.Resources.MergedDictionaries.Add(lang);
+        }
     }
 }

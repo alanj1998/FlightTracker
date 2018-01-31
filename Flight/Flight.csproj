@@ -7,7 +7,7 @@
     <ProjectGuid>{1BB91934-2720-4A2A-852B-1D38D8043E36}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Flight</RootNamespace>
+    <RootNamespace>FlightTracker</RootNamespace>
     <AssemblyName>Flight</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -36,6 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -64,9 +67,19 @@
     <Compile Include="FlightsWindow.xaml.cs">
       <DependentUpon>FlightsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JSON.cs" />
     <Compile Include="SelectWindow.xaml.cs">
       <DependentUpon>SelectWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserSettings.cs" />
+    <Page Include="Assets\Languages\en-IE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\Languages\pl-PL.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FlightDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +123,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Assets\UserSettings.json" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,28 +135,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\Circle1.png" />
+    <Resource Include="Assets\Images\Circle1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\localisationImage.png" />
+    <Resource Include="Assets\Images\localisationImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\airportNameLogo.png" />
+    <Resource Include="Assets\Images\airportNameLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\airportCodeLogo.png" />
+    <Resource Include="Assets\Images\airportCodeLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\settingsLogo.png" />
+    <Resource Include="Assets\Images\settingsLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\airlineLogo.png" />
+    <Resource Include="Assets\Images\airlineLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\exitCircle.png" />
+    <Resource Include="Assets\Images\exitCircle.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Files\exitLogo.png" />
+    <Resource Include="Assets\Images\exitLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

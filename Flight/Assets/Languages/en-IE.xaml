@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Flight.Assets.Languages"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- Main Menu Options -->
+    <system:String x:Key="clickMore">Click for More Options</system:String>
+    <system:String x:Key="clickAirportName">Find Flights by Airport Name</system:String>
+    <system:String x:Key="clickAirportID">Find Flights by Airport ID</system:String>
+    <system:String x:Key="clickAirline">Find Flights by Airline Name</system:String>
+    <system:String x:Key="exit">Exit App</system:String>
+    <system:String x:Key="settings">Settings</system:String>
+    <system:String x:Key="clickLocalisation">Find Flights in Your Area</system:String>
+    
+    <!-- Select Window -->
+    <system:String x:Key="titleSelect">Add Flight Information</system:String>
+    <system:String x:Key="search">Search</system:String>
+    <system:String x:Key="enter">Enter</system:String>
+    
+    <!-- Errors -->
+    <system:String x:Key="errorNoFlights">could not be found.\nTry Again!</system:String>
+    <system:String x:Key="errorEmpty">cannot be empty!\nTry Again!</system:String>
+    <system:String x:Key="errorTitle">Search Error!</system:String>
+    
+    <!-- Other -->
+    <system:String x:Key="airlineName">Airline Name</system:String>
+    <system:String x:Key="airportID">Airline ID</system:String>
+    <system:String x:Key="airportName">Airport Name</system:String>
+</ResourceDictionary>

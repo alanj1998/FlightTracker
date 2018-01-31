@@ -30,11 +30,11 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image x:Name="btnClose" Source="Files/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="339,0,0,93" MouseLeftButtonDown="btnClose_Click"></Image>
-        <Label x:Name="lblTitle" Content="Add Flight Details" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="30" FontSize="14.667" Margin="10,0,237,93"/>
+        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="339,0,0,93" MouseLeftButtonDown="btnClose_Click"></Image>
+        <Label x:Name="lblTitle" Content="{DynamicResource titleSelect}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="324" Height="30" FontSize="14.667" Margin="10,0,43,93"/>
 
         <!-- Controls -->
-        <Label x:Name="lblEnter" Content="Enter " HorizontalAlignment="Left" Margin="16,43,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label x:Name="lblEnter" Content="{DynamicResource enter}" HorizontalAlignment="Left" Margin="16,43,0,0" VerticalAlignment="Top" Width="143" Height="26"/>
         <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="26" Margin="164,43,0,0" TextWrapping="Wrap" Text="" Padding="3,3,0,0" VerticalAlignment="Top" Width="206">
             <TextBox.Background>
                 <SolidColorBrush Color="#00000000" Opacity="0"/>
@@ -54,6 +54,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="btnSearch" HorizontalAlignment="Left" Margin="87,81,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Height="28" Width="206" FontSize="16" Padding="5,3,0,0" MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
+        <TextBlock x:Name="btnSearch" HorizontalAlignment="Left" Margin="87,81,0,0" TextWrapping="Wrap" Text="{DynamicResource search}" VerticalAlignment="Top" Height="28" Width="206" FontSize="16" Padding="5,3,0,0" MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
     </Grid>
 </Window>

@@ -17,7 +17,7 @@
         </Rectangle>
         <Rectangle Height="10" Stroke="#FF3892ED" Fill="#00000000" Margin="0,40,0,0"/>
         <TextBlock x:Name="txBlockTime" HorizontalAlignment="Left" Margin="7,5,0,0" TextWrapping="Wrap" Text="12:22" VerticalAlignment="Top" Height="30" Width="57" FontSize="21.333"/>
-        <Image Source="Files/airlineLogo.png" RenderOptions.BitmapScalingMode="HighQuality" x:Name="imageLogo" HorizontalAlignment="Stretch" Height="30" Margin="205,5,86,0" VerticalAlignment="Top" Width="109"/>
+        <Image Source="Assets/Images/airlineLogo.png" RenderOptions.BitmapScalingMode="HighQuality" x:Name="imageLogo" HorizontalAlignment="Stretch" Height="30" Margin="205,5,86,0" VerticalAlignment="Top" Width="109"/>
         <TextBlock x:Name="txBlockTown" HorizontalAlignment="Left" Margin="65,5,0,0" TextWrapping="Wrap" Text="East Midlands" VerticalAlignment="Top" Height="30" Width="135" FontSize="21.333"/>
         <TextBlock x:Name="txBlockAirlineCode" HorizontalAlignment="Left" Margin="319,5,0,0" TextWrapping="Wrap" Text="FR5347" VerticalAlignment="Top" Height="30" Width="71" FontSize="21.333"/>
 
