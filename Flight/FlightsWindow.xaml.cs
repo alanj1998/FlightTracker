@@ -87,8 +87,8 @@ namespace FlightTracker
         {
             ClearPlace();
             ChangePage();
-            AddFlights(this.departureFlights);
-            // AddFlights(this.arrivalFlights);
+            AddFlights(this.departureFlights, Departures);
+            AddFlights(this.arrivalFlights, Arrivals);
             Debug.WriteLine($"The value of PageNo is {this.pageNo}");
         }
 
@@ -103,6 +103,7 @@ namespace FlightTracker
             for (int i = 0; i < MAX_NUMBER_PER_PAGE; i++)
             {
                 Departures.Children.Add(departureFlights[i]);
+                Arrivals.Children.Add(arrivalFlights[i]);
             }
         }
 
@@ -130,13 +131,16 @@ namespace FlightTracker
             {
                 int flightsOnDisplay = Departures.Children.Count;
                 for (int i = 0; i < flightsOnDisplay; i++)
+                {
                     Departures.Children.RemoveAt(0);
+                    Arrivals.Children.RemoveAt(0);
+                }
 
                 Debug.WriteLine($"List of departures = {Departures.Children.Count}");
             });
         }
 
-        private void AddFlights(List<FlightDetails> l)
+        private void AddFlights(List<FlightDetails> l, StackPanel type)
         {
             int lastFlightIndex = GetLastIndex();
             if (lastFlightIndex > l.Count)
@@ -147,7 +151,7 @@ namespace FlightTracker
             Dispatcher.Invoke(() =>
             {
                 for (int i = MAX_NUMBER_PER_PAGE * this.pageNo; i < lastFlightIndex; i++)
-                    Departures.Children.Add(l[i]);
+                    type.Children.Add(l[i]);
             });
 
         }
