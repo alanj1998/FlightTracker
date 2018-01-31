@@ -20,9 +20,9 @@ namespace FlightTracker
             return JsonConvert.DeserializeObject<T>(data);
         }
 
-        public static void UpdateJSON<T>(string key, string value, string path)
+        public static void UpdateJSON<TKey,TVal>(TKey key, TVal value, string path)
         {
-            dynamic data = GetJSONData<T>($"~/{path}");
+            Dictionary<TKey,TVal> data = GetJSONData<Dictionary<TKey,TVal>>($"~/{path}");
             data[key] = value;
             WriteToJSONData(data, $"~/{path}");
         }
