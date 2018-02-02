@@ -25,4 +25,12 @@
     <system:String x:Key="airlineName">Linie Lotnicze</system:String>
     <system:String x:Key="airportID">Numer ICAO</system:String>
     <system:String x:Key="airportName">Miejsce</system:String>
+    <system:String x:Key="language">Język</system:String>
+    <system:String x:Key="locale">Ustawienia Lokalne</system:String>
+    <system:String x:Key="timeFormat">Format Czasu</system:String>
+    <system:String x:Key="save">Zapisz</system:String>
+
+    <!-- Success -->
+    <system:String x:Key="success">Zapisane!</system:String>
+    <system:String x:Key="successSave">Ustawienia Zapisane Pomyślnie!</system:String>
 </ResourceDictionary>

@@ -33,7 +33,4 @@
     <system:String x:Key="locale">Local Settings</system:String>
     <system:String x:Key="timeFormat">Time Format</system:String>
     <system:String x:Key="save">Save</system:String>
-    
-    <!-- Settings -->
-
 </ResourceDictionary>
