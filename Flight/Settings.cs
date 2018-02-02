@@ -20,6 +20,10 @@ namespace FlightTracker
             {
                 return language;
             }
+            set
+            {
+                language = value;
+            }
         }
 
         public static string Time
@@ -27,6 +31,10 @@ namespace FlightTracker
             get
             {
                 return timeType;
+            }
+            set
+            {
+                timeType = value;
             }
         }
 
@@ -41,6 +49,14 @@ namespace FlightTracker
         {
             if (typeof(UserSettings).GetProperties().Select(x => x.Name.ToUpper()).Contains(setting.ToUpper()))
             {
+                if (setting.ToUpper() == "LANGUAGE")
+                {
+                    Language = value;
+                }
+                else
+                {
+                    Time = value;
+                }
                 JSON.UpdateJSON(setting, value, UserSettings.PATH_TO_SETTINGS);
                 return true;
             }

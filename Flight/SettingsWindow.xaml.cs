@@ -64,8 +64,14 @@ namespace FlightTracker
 
                 if (success)
                 {
+                    cmBoxLanguage.SelectedItem = languagesAvailable[UserSettings.Language];
                     AppSettings.SetResourceFile(language);
                     MessageBox.Show(Application.Current.Resources["successSave"].ToString(), Application.Current.Resources["success"].ToString(), MessageBoxButton.OK, MessageBoxImage.Information);
+                    Dispatcher.Invoke(() =>
+                    {
+                        TextBlock t = Application.Current.MainWindow.FindName("lblOptions") as TextBlock;
+                        t.Text = Application.Current.Resources["clickMore"] as string;
+                    });
                     this.Close();
                 }
             }
