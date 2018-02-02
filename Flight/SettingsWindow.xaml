@@ -1,0 +1,45 @@
+﻿<Window x:Class="FlightTracker.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightTracker"
+        mc:Ignorable="d"
+        Title="Settings" Height="500" Width="300" AllowsTransparency="True" WindowStyle="None" Background="#00000000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="30" Stroke="#FF3892ED" VerticalAlignment="Top" Width="300">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="267,0,2,470" MouseLeftButtonDown="btnClose_Click"/>
+        <Label x:Name="lblTitle" Content="{DynamicResource settings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="263" Height="30" FontSize="14.667" Margin="0,0,37,470"/>
+        <Rectangle HorizontalAlignment="Left" Height="470" Margin="0,30,0,0" Stroke="#FF3892ED" VerticalAlignment="Top" Width="300">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEC3C3C" Offset="0.671"/>
+                    <GradientStop Color="#CCE00000" Offset="0.936"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle HorizontalAlignment="Left" Height="135" Margin="10,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="280" StrokeThickness="2" RadiusY="10" RadiusX="10">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0D68C3" Offset="0"/>
+                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label x:Name="lblLanguage" Content="{DynamicResource language}" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="lblClock" Content="{DynamicResource timeFormat}" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBlock Margin="98,64,83,0" TextWrapping="Wrap" Text="{DynamicResource locale}" VerticalAlignment="Top" Width="119" Height="20" FontSize="16" Foreground="#FFBB2020" TextDecorations="Underline" HorizontalAlignment="Center" FontStyle="Italic"/>
+        <ComboBox x:Name="cmBoxLanguage" HorizontalAlignment="Left" Margin="152,100,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FFC30101" Background="#FFD60000"/>
+        <ToggleButton Content="12H" x:Name="btn12h" Height="30" Width="60.6" Margin="152,140,87,330" BorderBrush="#00000000" Background="White"/>
+        <ToggleButton Content="24H" x:Name="btn24h" Height="30" Width="60.6" Margin="211,140,28,330" BorderBrush="#00000000" Background="White"/>
+        <Button Content="{DynamicResource save}" HorizontalAlignment="Left" Margin="30,470,0,0" VerticalAlignment="Top" Width="233" Click="Button_Click"/>
+    </Grid>
+</Window>

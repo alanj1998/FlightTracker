@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Globalization;
 
 namespace FlightTracker
 {
@@ -30,8 +31,15 @@ namespace FlightTracker
         public FlightsWindow(MainWindow main)
         {
             InitializeComponent();
+            CultureInfo dateFormat;
 
-            lblTime.Content = DateTime.Now.ToLongTimeString();
+            if (UserSettings.Time == "12h")
+                dateFormat = new CultureInfo("en-UK");
+            else
+                dateFormat = new CultureInfo("pl-PL");
+
+
+            lblTime.Content = DateTime.Now.ToString(dateFormat);
             this.MainMenu = main;
 
             //Setting up the Timer

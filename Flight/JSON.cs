@@ -22,15 +22,15 @@ namespace FlightTracker
 
         public static void UpdateJSON<TKey,TVal>(TKey key, TVal value, string path)
         {
-            Dictionary<TKey,TVal> data = GetJSONData<Dictionary<TKey,TVal>>($"~/{path}");
+            Dictionary<TKey,TVal> data = GetJSONData<Dictionary<TKey,TVal>>(path);
             data[key] = value;
-            WriteToJSONData(data, $"~/{path}");
+            WriteToJSONData(data, path);
         }
 
         public static void WriteToJSONData(object data, string path)
         {
-            using (StreamWriter sw = new StreamWriter($"~/{path}"))
-                sw.WriteLine(JsonConvert.SerializeObject(data));
+            using (StreamWriter sw = new StreamWriter($"../../{path}"))
+                sw.WriteLine(JsonConvert.SerializeObject(data, Formatting.Indented));
         }
     }
 }

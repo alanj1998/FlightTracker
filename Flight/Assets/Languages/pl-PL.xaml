@@ -22,7 +22,7 @@
     <system:String x:Key="errorTitle">Błąd Wyszukiwania</system:String>
 
     <!-- Other -->
-    <system:String x:Key="airlineName">Linie Lotniczej</system:String>
+    <system:String x:Key="airlineName">Linie Lotnicze</system:String>
     <system:String x:Key="airportID">Numer ICAO</system:String>
     <system:String x:Key="airportName">Miejsce</system:String>
 </ResourceDictionary>

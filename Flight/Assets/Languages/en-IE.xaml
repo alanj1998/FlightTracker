@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Flight.Assets.Languages"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-    <!-- Main Menu Options -->
+    
+    <!-- Main Menu Window -->
     <system:String x:Key="clickMore">Click for More Options</system:String>
     <system:String x:Key="clickAirportName">Find Flights by Airport Name</system:String>
     <system:String x:Key="clickAirportID">Find Flights by Airport ID</system:String>
@@ -21,8 +21,19 @@
     <system:String x:Key="errorEmpty">cannot be empty!\nTry Again!</system:String>
     <system:String x:Key="errorTitle">Search Error!</system:String>
     
+    <!-- Success -->
+    <system:String x:Key="success">Success!</system:String>
+    <system:String x:Key="successSave">Settings Saved Successfully!</system:String>
+    
     <!-- Other -->
     <system:String x:Key="airlineName">Airline Name</system:String>
     <system:String x:Key="airportID">Airline ID</system:String>
     <system:String x:Key="airportName">Airport Name</system:String>
+    <system:String x:Key="language">Language</system:String>
+    <system:String x:Key="locale">Local Settings</system:String>
+    <system:String x:Key="timeFormat">Time Format</system:String>
+    <system:String x:Key="save">Save</system:String>
+    
+    <!-- Settings -->
+
 </ResourceDictionary>

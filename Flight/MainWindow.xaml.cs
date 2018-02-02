@@ -35,8 +35,8 @@ namespace FlightTracker
         public MainWindow()
         {
             InitializeComponent();
-            UserSettings user = new UserSettings();
-            SetResourceFile(user.Language);
+            UserSettings.SetUserSettings();
+            AppSettings.SetResourceFile(UserSettings.Language);
 
             //Change all outerMenu buttons to opacity of 0
             Animation.Animate(Image.OpacityProperty, 0, btnAirportIDCheck, new TimeSpan(0, 0, 0, 0, 0), ChangeVisibility);
@@ -66,17 +66,6 @@ namespace FlightTracker
                 }
             }
         }
-
-        //All images were labelled as free to reuse! A dictionary of Image Files
-        private Dictionary<string, string> ImagesDict = new Dictionary<string, string>()
-        {
-            { "Localisation", "Assets/Images/localisationImage.png" },
-            { "Airport Name", "Assets/Images/airportNameLogo.png" },
-            { "Airport ID", "Assets/Images/airportCodeLogo.png" },
-            { "Airline Name", "Assets/Images/airlineLogo.png" },
-            { "Settings", "Assets/Images/settingsLogo.png" },
-            { "Exit", "Assets/Images/exitLogo.png" }
-        };
 
         //Change the source of the image to change the displayed image
         private void ChangeImageSource(string source)
@@ -131,27 +120,27 @@ namespace FlightTracker
             {
                 message = Application.Current.Resources["clickAirportID"].ToString();
 
-                source = ImagesDict["Airport ID"];
+                source = AppPaths.Path.Images["Airport ID"];
             }
             else if (name == "btnAirportNameCheck")
             {
                 message = Application.Current.Resources["clickAirportName"].ToString();
-                source = ImagesDict["Airport Name"];
+                source = AppPaths.Path.Images["Airport Name"];
             }
             else if (name == "btnAirline")
             {
                 message = Application.Current.Resources["clickAirline"].ToString();
-                source = ImagesDict["Airline Name"];
+                source = AppPaths.Path.Images["Airline Name"];
             }
             else if (name == "btnSettings")
             {
                 message = Application.Current.Resources["settings"].ToString();
-                source = ImagesDict["Settings"];
+                source = AppPaths.Path.Images["Settings"];
             }
             else if(name == "btnExit")
             {
                 message = Application.Current.Resources["exit"].ToString();
-                source = ImagesDict["Exit"];
+                source = AppPaths.Path.Images["Exit"];
             }
 
             Animation.Animate(Image.OpacityProperty, 1, hovered, new TimeSpan(0, 0, 0, 0, 300), preAnim: (o) => { ChangeImageSource(source); });
@@ -164,7 +153,7 @@ namespace FlightTracker
             Image hovered = sender as Image;
             Animation.Animate(Image.OpacityProperty, 0.5, hovered, new TimeSpan(0, 0, 0, 0, 300));
             lblOptions.Text = Application.Current.Resources["clickMore"].ToString();
-            ChangeImageSource(ImagesDict["Localisation"]);
+            ChangeImageSource(AppPaths.Path.Images["Localisation"]);
         }
 
         //Inner localisation button
@@ -200,11 +189,8 @@ namespace FlightTracker
 
             if (temp.Name == "btnSettings")
             {
-                /*
-                SettingsWindow window = new SettingsWindow(this);
-                window.Show();
-                this.Hide();
-                */
+                SettingsWindow window = new SettingsWindow();
+                window.ShowDialog();
             }
             else
             {
@@ -220,14 +206,5 @@ namespace FlightTracker
             this.Close();
         }
         #endregion
-
-        private void SetResourceFile(string Language)
-        {
-            Application.Current.Resources.MergedDictionaries.Clear();
-
-            ResourceDictionary lang = new ResourceDictionary();
-            lang.Source = new Uri($"Assets/Languages/{Language}.xaml", UriKind.Relative);
-            Application.Current.Resources.MergedDictionaries.Add(lang);
-        }
     }
 }
