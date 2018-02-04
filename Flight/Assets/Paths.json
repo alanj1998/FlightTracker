@@ -4,7 +4,13 @@
   "languageList": "Assets/Languages/LangList.json",
   "languages": {
     "en-IE": "Assets/Languages/en-IE.xaml",
-    "pl-PL": "Assets/Languages/pl-PL.xaml"
+    "pl-PL": "Assets/Languages/pl-PL.xaml",
+    "fr-FR": "Assets/Languages/fr-FR.xaml",
+    "it-IT": "Assets/Languages/it-IT.xaml",
+    "lt-LT": "Assets/Languages/lt-LT.xaml",
+    "ru-RU": "Assets/Languages/ru-RU.xaml",
+    "es-ES": "Assets/Languages/es-ES.xaml",
+    "de-DE": "Assets/Languages/de-DE.xaml"
   },
 
   //Images

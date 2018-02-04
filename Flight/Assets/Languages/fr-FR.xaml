@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Main Menu Window -->
+    <system:String x:Key="clickMore">Cliquez pour Plus d'Options</system:String>
+    <system:String x:Key="clickAirportID">Trouver des Vols par ID de l'Aéroport</system:String>
+    <system:String x:Key="clickAirline">Trouver des Vols par Nom de Compagnie Aérienne</system:String>
+    <system:String x:Key="exit">Fermer l'Application</system:String>
+    <system:String x:Key="settings">Paramètres</system:String>
+    <system:String x:Key="clickLocalisation">Trouver des Vols dans Votre Région</system:String>
+    
+    <!-- Select Window -->
+    <system:String x:Key="titleSelect">Ajouter des Informations de Vol</system:String>
+    <system:String x:Key="search">Chercher</system:String>
+    <system:String x:Key="enter">Entrer</system:String>
+    
+    <!-- Errors -->
+    <system:String x:Key="errorNoFlights">n'a pas pu être trouvé.\nRéessayer!</system:String>
+    <system:String x:Key="errorEmpty">ne peut pas être vide.\nRéessayer!</system:String>
+    <system:String x:Key="errorTitle">Erreur de recherche!</system:String>
+    
+    <!-- Success -->
+    <system:String x:Key="success">Succès!</system:String>
+    <system:String x:Key="successSave">Paramètres enregistrés avec succès!</system:String>
+    
+    <!-- Other -->
+    <system:String x:Key="airlineName">Nom de la Compagnie Aérienne</system:String>
+    <system:String x:Key="airportID">ID de l'Aéroport</system:String>
+    <system:String x:Key="airportName">Nom de l'Aéroport</system:String>
+    <system:String x:Key="language">La Langue</system:String>
+    <system:String x:Key="locale">Paramètres Locaux</system:String>
+    <system:String x:Key="timeFormat">Format de l'heure</system:String>
+    <system:String x:Key="save">Sauvegarde</system:String>
+</ResourceDictionary>

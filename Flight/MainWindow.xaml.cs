@@ -160,7 +160,7 @@ namespace FlightTracker
         private void btnUseLocalisation_MouseEnter(object sender, MouseEventArgs e)
         {
             Animation.Animate(Image.OpacityProperty, 1, btnMainMenu, new TimeSpan(0, 0, 0, 0, 300));
-            lblOptions.Text = "Click to Find Flights Near You";
+            lblOptions.Text = Application.Current.Resources["clickLocalisation"].ToString();
         }
 
         //When the mouse is no longer hovering over localisation button, change the text to click for more options

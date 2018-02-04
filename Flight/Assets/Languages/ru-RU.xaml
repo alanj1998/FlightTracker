@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Main Menu Window -->
+    <system:String x:Key="clickMore">Нажмите «Дополнительные параметры»</system:String>
+    <system:String x:Key="clickAirportName">Найти авиабилеты по названию аэропорта</system:String>
+    <system:String x:Key="clickAirportID">Найти авиабилеты по ID аэропорта</system:String>
+    <system:String x:Key="clickAirline">Найти авиабилеты по названию авиакомпании</system:String>
+    <system:String x:Key="exit">Закрыть приложение</system:String>
+    <system:String x:Key="settings">настройки</system:String>
+    <system:String x:Key="clickLocalisation">Поиск рейсов в ваш регион</system:String>
+    
+    <!-- Select Window -->
+    <system:String x:Key="titleSelect">Добавить информацию о рейсе</system:String>
+    <system:String x:Key="search">Поиск</system:String>
+    <system:String x:Key="enter">Введите</system:String>
+    
+    <!-- Errors -->
+    <system:String x:Key="errorNoFlights">не найдено.\nПопробуй еще раз!</system:String>
+    <system:String x:Key="errorEmpty">не может быть пустым!\nПопробуй еще раз!</system:String>
+    <system:String x:Key="errorTitle">Ошибка поиска!</system:String>
+    
+    <!-- Success -->
+    <system:String x:Key="success">Успех!</system:String>
+    <system:String x:Key="successSave">Настройки сохранены успешно!</system:String>
+    
+    <!-- Other -->
+    <system:String x:Key="airlineName">Название авиакомпании</system:String>
+    <system:String x:Key="airportID">Номер аэропорта</system:String>
+    <system:String x:Key="airportName">Название аэропорта</system:String>
+    <system:String x:Key="language">язык</system:String>
+    <system:String x:Key="locale">Локальные настройки</system:String>
+    <system:String x:Key="timeFormat">Формат времени</system:String>
+    <system:String x:Key="save">Сохранить</system:String>
+</ResourceDictionary>

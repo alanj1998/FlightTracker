@@ -25,7 +25,9 @@ namespace FlightTracker
         {
             InitializeComponent();
             SetUpSettingsWindow();
-            cmBoxLanguage.ItemsSource = languagesAvailable.Select(x => x.Value);
+            List<string> lang = languagesAvailable.Select(x => x.Value).ToList();
+            lang.Sort();
+            cmBoxLanguage.ItemsSource = lang;
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)

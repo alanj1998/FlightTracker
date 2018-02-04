@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightTracker"
         mc:Ignorable="d"
-        Title="Flights Options" Height="123" Width="377" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Unloaded="Window_Unloaded" AllowsTransparency="True" WindowStyle="None">
+        Title="Flights Options" Height="123" Width="487" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Unloaded="Window_Unloaded" AllowsTransparency="True" WindowStyle="None">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFEC3C3C" Offset="0.671"/>
@@ -14,7 +14,7 @@
     </Window.Background>
     <Grid>
         <!-- Layout of the Window -->
-        <Rectangle HorizontalAlignment="Left" Height="30" Stroke="#FF3892ED" VerticalAlignment="Top" Width="377">
+        <Rectangle HorizontalAlignment="Left" Height="30" Stroke="#FF3892ED" VerticalAlignment="Top" Width="487">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D68C3" Offset="0"/>
@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="164,42,0,0">
+        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="265,41,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D68C3" Offset="0"/>
@@ -30,12 +30,12 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="339,0,0,93" MouseLeftButtonDown="btnClose_Click"></Image>
-        <Label x:Name="lblTitle" Content="{DynamicResource titleSelect}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="324" Height="30" FontSize="14.667" Margin="10,0,43,93"/>
+        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="447,0,0,93" MouseLeftButtonDown="btnClose_Click"></Image>
+        <Label x:Name="lblTitle" Content="{DynamicResource titleSelect}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="324" Height="30" FontSize="14.667" Margin="10,0,153,93"/>
 
         <!-- Controls -->
-        <Label x:Name="lblEnter" Content="{DynamicResource enter}" HorizontalAlignment="Left" Margin="16,43,0,0" VerticalAlignment="Top" Width="143" Height="26"/>
-        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="26" Margin="164,43,0,0" TextWrapping="Wrap" Text="" Padding="3,3,0,0" VerticalAlignment="Top" Width="206">
+        <Label x:Name="lblEnter" Content="{DynamicResource enter}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="240" Height="26"/>
+        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="26" Margin="265,42,0,0" TextWrapping="Wrap" Text="" Padding="3,3,0,0" VerticalAlignment="Top" Width="206">
             <TextBox.Background>
                 <SolidColorBrush Color="#00000000" Opacity="0"/>
             </TextBox.Background>
@@ -46,7 +46,7 @@
                 <SolidColorBrush Opacity="0"/>
             </TextBox.SelectionBrush>
         </TextBox>
-        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="87,81,0,0">
+        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="148,81,0,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0D68C3" Offset="0"/>
@@ -54,6 +54,6 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock x:Name="btnSearch" HorizontalAlignment="Left" Margin="87,81,0,0" TextWrapping="Wrap" Text="{DynamicResource search}" VerticalAlignment="Top" Height="28" Width="206" FontSize="16" Padding="5,3,0,0" MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
+        <TextBlock x:Name="btnSearch" HorizontalAlignment="Left" Margin="148,81,0,0" TextWrapping="Wrap" Text="{DynamicResource search}" VerticalAlignment="Top" Height="28" Width="206" FontSize="16" Padding="5,3,0,0" MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
     </Grid>
 </Window>

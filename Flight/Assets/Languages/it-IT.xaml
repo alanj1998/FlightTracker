@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Main Menu Window -->
+    <system:String x:Key="clickMore">Clicca per Altre Opzioni</system:String>
+    <system:String x:Key="clickAirportName">Trova Voli per Nome dell'Aeroporto</system:String>
+    <system:String x:Key="clickAirportID">Trova Voli per ID Aeroporto</system:String>
+    <system:String x:Key="clickAirline">Trova Voli per Nome Compagnia Aerea</system:String>
+    <system:String x:Key="exit">Chiudi App</system:String>
+    <system:String x:Key="settings">Impostazioni</system:String>
+    <system:String x:Key="clickLocalisation">Trova Voli Nella Tua Zona</system:String>
+    
+    <!-- Select Window -->
+    <system:String x:Key="titleSelect">Aggiungi Informazioni di Volo</system:String>
+    <system:String x:Key="search">Ricerca</system:String>
+    <system:String x:Key="enter">Inserisci</system:String>
+    
+    <!-- Errors -->
+    <system:String x:Key="errorNoFlights">non è stato trovato.\nRiprova!</system:String>
+    <system:String x:Key="errorEmpty">non può essere vuoto! Riprova!</system:String>
+    <system:String x:Key="errorTitle">Errore di Ricerca!</system:String>
+    
+    <!-- Success -->
+    <system:String x:Key="success">Successo!</system:String>
+    <system:String x:Key="successSave">Impostazioni Salvate con Successo!</system:String>
+    
+    <!-- Other -->
+    <system:String x:Key="airlineName">Nome della Compagnia Aerea</system:String>
+    <system:String x:Key="airportID">ID dell'Aeroporto</system:String>
+    <system:String x:Key="airportName">Nome dell'Aeroporto</system:String>
+    <system:String x:Key="language">Linguaggio</system:String>
+    <system:String x:Key="locale">Impostazioni Locali</system:String>
+    <system:String x:Key="timeFormat">Formato Orario</system:String>
+    <system:String x:Key="save">Salvare</system:String>
+</ResourceDictionary>

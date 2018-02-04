@@ -27,7 +27,7 @@
     
     <!-- Other -->
     <system:String x:Key="airlineName">Airline Name</system:String>
-    <system:String x:Key="airportID">Airline ID</system:String>
+    <system:String x:Key="airportID">Airport ID</system:String>
     <system:String x:Key="airportName">Airport Name</system:String>
     <system:String x:Key="language">Language</system:String>
     <system:String x:Key="locale">Local Settings</system:String>
