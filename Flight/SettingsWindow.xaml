@@ -38,8 +38,8 @@
         <Label x:Name="lblClock" Content="{DynamicResource timeFormat}" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBlock Margin="98,64,83,0" TextWrapping="Wrap" Text="{DynamicResource locale}" VerticalAlignment="Top" Width="119" Height="20" FontSize="16" Foreground="#FFBB2020" TextDecorations="Underline" HorizontalAlignment="Center" FontStyle="Italic"/>
         <ComboBox x:Name="cmBoxLanguage" HorizontalAlignment="Left" Margin="152,100,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FFC30101" Background="#FFD60000"/>
-        <ToggleButton Content="12H" x:Name="btn12h" Height="30" Width="60.6" Margin="152,140,87,330" BorderBrush="#00000000" Background="White"/>
-        <ToggleButton Content="24H" x:Name="btn24h" Height="30" Width="60.6" Margin="211,140,28,330" BorderBrush="#00000000" Background="White"/>
+        <Button Content="12H" x:Name="btn12h" Height="30" Width="60.6" Margin="152,140,87,330" BorderBrush="#00000000" Background="White" Click="hourButton_Clicked"/>
+        <Button Content="24H" x:Name="btn24h" Height="30" Width="60.6" Margin="211,140,28,330" BorderBrush="#00000000" Background="White" Click="hourButton_Clicked"/>
         <Button Content="{DynamicResource save}" HorizontalAlignment="Left" Margin="30,470,0,0" VerticalAlignment="Top" Width="233" Click="Button_Click"/>
     </Grid>
 </Window>

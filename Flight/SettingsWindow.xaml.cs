@@ -21,6 +21,7 @@ namespace FlightTracker
     public partial class SettingsWindow : Window
     {
         private static Dictionary<string, string> languagesAvailable = JSON.GetJSONData<Dictionary<string, string>>(AppPaths.Path.LanguageList);
+        private string time = "";
         public SettingsWindow()
         {
             InitializeComponent();
@@ -41,12 +42,18 @@ namespace FlightTracker
             cmBoxLanguage.SelectedItem = languagesAvailable[UserSettings.Language];
 
             LinearGradientBrush red = SetGradientColor();
-            
+
 
             if (UserSettings.Time == "24h")
+            {
                 btn24h.Background = red;
+                time = "24h";
+            }
             else
+            {
                 btn12h.Background = red;
+                time = "12h";
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -91,6 +98,25 @@ namespace FlightTracker
             red.GradientStops.Add(new GradientStop(Color.FromRgb(224, 0, 0), 0.936));
 
             return red;
+        }
+
+        private void hourButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+
+            LinearGradientBrush red = SetGradientColor();
+            if (time == "12h")
+            {
+                btn12h.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                btn24h.Background = red;
+                time = "24h";
+            }
+            else if (time == "24h")
+            {
+                btn24h.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                btn12h.Background = red;
+                time = "12h";
+            }
         }
     }
 }
