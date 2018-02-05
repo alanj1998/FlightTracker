@@ -2,14 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     
+    <!-- Credits to Karolis Gunka for checking and updating the translation -->
     <!-- Main Menu Window -->
     <system:String x:Key="clickMore">Spustelėkite, jei Norite Daugiau Parinkčių</system:String>
     <system:String x:Key="clickAirportName">Ieškoti Skrydžių Pagal oro Uosto Pavadinimą</system:String>
-    <system:String x:Key="clickAirportID">Rasti Skrydžius Sagal oro Uosto ID</system:String>
+    <system:String x:Key="clickAirportID">Rasti Skrydžius Pagal oro Uosto ID</system:String>
     <system:String x:Key="clickAirline">Ieškoti Skrydžių Pagal oro Linijų Pavadinimą</system:String>
     <system:String x:Key="exit">Uždaryti Programą</system:String>
     <system:String x:Key="settings">Nustatymai</system:String>
-    <system:String x:Key="clickLocalisation">Rasti Skrydžius Jūsų Rajone</system:String>
+    <system:String x:Key="clickLocalisation">Rasti Skrydžius Jūsų Vietoje</system:String>
     
     <!-- Select Window -->
     <system:String x:Key="titleSelect">Pridėti Skrydžio Informaciją</system:String>
@@ -24,7 +25,7 @@
 
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">nepavyko rasti!\nBandyk iš naujo!</system:String>
-    <system:String x:Key="errorEmpty">negali būti tuščia!\nBandyk iš naujo!</system:String>
+    <system:String x:Key="errorEmpty">Langelis negali buti tuscias!\nBandyk iš naujo!</system:String>
     <system:String x:Key="errorTitle">Paieškos klaida!</system:String>
     
     <!-- Success -->
@@ -38,5 +39,5 @@
     <system:String x:Key="language">Kalba</system:String>
     <system:String x:Key="locale">Vietiniai Nustatymai</system:String>
     <system:String x:Key="timeFormat">Laiko Formatas</system:String>
-    <system:String x:Key="save">Sutaupyti</system:String>
+    <system:String x:Key="save">Išsaugota!</system:String>
 </ResourceDictionary>
