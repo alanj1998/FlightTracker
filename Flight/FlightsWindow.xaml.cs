@@ -27,11 +27,11 @@ namespace FlightTracker
         private List<FlightDetails> departureFlights = new List<FlightDetails>();
         private List<FlightDetails> arrivalFlights = new List<FlightDetails>();
         private const int MAX_NUMBER_PER_PAGE = 7;
+        private CultureInfo dateFormat;
 
         public FlightsWindow(MainWindow main)
         {
             InitializeComponent();
-            CultureInfo dateFormat;
 
             if (UserSettings.Time == "12h")
                 dateFormat = new CultureInfo("en-UK");
@@ -88,7 +88,7 @@ namespace FlightTracker
             //Using Dispatcher to update the UI thread
             Dispatcher.Invoke(() =>
             {
-                lblTime.Content = DateTime.Now.ToLongTimeString();
+                lblTime.Content = DateTime.Now.ToString(dateFormat);
             });
         }
 

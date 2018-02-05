@@ -14,7 +14,13 @@
     <system:String x:Key="titleSelect">Ajouter des Informations de Vol</system:String>
     <system:String x:Key="search">Chercher</system:String>
     <system:String x:Key="enter">Entrer</system:String>
-    
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">Eemplacement de l'Aéroport</system:String>
+    <system:String x:Key="flightDetails">Les Détails du Vol</system:String>
+    <system:String x:Key="departures">Départs</system:String>
+    <system:String x:Key="arrivals">Arrivées</system:String>
+
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">n'a pas pu être trouvé.\nRéessayer!</system:String>
     <system:String x:Key="errorEmpty">ne peut pas être vide.\nRéessayer!</system:String>

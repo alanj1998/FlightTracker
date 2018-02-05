@@ -75,17 +75,19 @@ namespace FlightTracker
                 {
                     cmBoxLanguage.SelectedItem = languagesAvailable[UserSettings.Language];
                     AppSettings.SetResourceFile(language);
-                    MessageBox.Show(Application.Current.Resources["successSave"].ToString(), Application.Current.Resources["success"].ToString(), MessageBoxButton.OK, MessageBoxImage.Information);
                     Dispatcher.Invoke(() =>
                     {
                         TextBlock t = Application.Current.MainWindow.FindName("lblOptions") as TextBlock;
                         t.Text = Application.Current.Resources["clickMore"] as string;
                     });
-                    this.Close();
                 }
             }
 
-                            
+            if((time == "24h" && UserSettings.Time != "24h") || (time == "12h" && UserSettings.Time != "12h"))
+                UserSettings.UpdateUserSettings(time, Settings.Time.ToString());
+
+            MessageBox.Show(Application.Current.Resources["successSave"].ToString(), Application.Current.Resources["success"].ToString(), MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
         }
 
         private LinearGradientBrush SetGradientColor()

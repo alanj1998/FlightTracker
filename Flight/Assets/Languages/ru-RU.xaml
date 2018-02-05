@@ -15,7 +15,13 @@
     <system:String x:Key="titleSelect">Добавить информацию о рейсе</system:String>
     <system:String x:Key="search">Поиск</system:String>
     <system:String x:Key="enter">Введите</system:String>
-    
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">Расположение аэропорта</system:String>
+    <system:String x:Key="flightDetails">Детали полетаs</system:String>
+    <system:String x:Key="departures">Отправления</system:String>
+    <system:String x:Key="arrivals">Прибытие</system:String>
+
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">не найдено.\nПопробуй еще раз!</system:String>
     <system:String x:Key="errorEmpty">не может быть пустым!\nПопробуй еще раз!</system:String>

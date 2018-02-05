@@ -40,7 +40,7 @@ namespace FlightTracker
         private void SetFlightInfo()
         {
             txBlockAirlineCode.Text = this.flight.AirlineCode;
-            txBlockTime.Text = $"{this.flight.Time.Hour}:{this.flight.Time.Minute}";
+            txBlockTime.Text = this.flight.Time.ToShortTimeString();
             txBlockTown.Text = this.flight.Town;
             imageLogo.Source = new BitmapImage(this.flight.PathToLogo);
         }

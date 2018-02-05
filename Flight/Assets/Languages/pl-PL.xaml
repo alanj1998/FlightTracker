@@ -11,10 +11,16 @@
     <system:String x:Key="settings">Ustawienia</system:String>
     <system:String x:Key="clickLocalisation">Wyszukaj Lotów W Twoim Obszarze</system:String>
 
-    <!-- Main Window -->
+    <!-- Select Window -->
     <system:String x:Key="titleSelect">Dodaj Informacje O Locie</system:String>
     <system:String x:Key="search">Szukaj</system:String>
     <system:String x:Key="enter">Wprowadź</system:String>
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">Miejsce Lotniska</system:String>
+    <system:String x:Key="flightDetails">Detale Lotów</system:String>
+    <system:String x:Key="departures">Wyloty</system:String>
+    <system:String x:Key="arrivals">Przyloty</system:String>
 
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">nie znalezione.\nSpróbuj Ponownie!</system:String>

@@ -15,7 +15,13 @@
     <system:String x:Key="titleSelect">Füge Fluginformationen hinzu</system:String>
     <system:String x:Key="search">Suchen</system:String>
     <system:String x:Key="enter">Gebe ein</system:String>
-    
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">Flughafenstandort</system:String>
+    <system:String x:Key="flightDetails">Flugauskunft</system:String>
+    <system:String x:Key="departures">Abflüge</system:String>
+    <system:String x:Key="arrivals">Ankünfte</system:String>
+
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">konnte nicht gefunden werden.\nVersuche es erneut!</system:String>
     <system:String x:Key="errorEmpty">darf nicht leer sein!\nVersuche es erneut!</system:String>

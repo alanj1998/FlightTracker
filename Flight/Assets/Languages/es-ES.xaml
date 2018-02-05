@@ -15,6 +15,12 @@
     <system:String x:Key="titleSelect">Añadir Información de Vuelo</system:String>
     <system:String x:Key="search">Buscar</system:String>
     <system:String x:Key="enter">Ingrese</system:String>
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">Ubicación Del Aeropuerto</system:String>
+    <system:String x:Key="flightDetails">Detalles del Vuelo</system:String>
+    <system:String x:Key="departures">Salidas</system:String>
+    <system:String x:Key="arrivals">Llegadas</system:String>
     
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">no pudo ser encontrado.\n¡Inténtalo de nuevo!</system:String>

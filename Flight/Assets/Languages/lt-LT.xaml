@@ -15,7 +15,13 @@
     <system:String x:Key="titleSelect">Pridėti Skrydžio Informaciją</system:String>
     <system:String x:Key="search">Paieška</system:String>
     <system:String x:Key="enter">Įveskite</system:String>
-    
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">Oro uosto Vieta</system:String>
+    <system:String x:Key="flightDetails">Skrydžio Detalės</system:String>
+    <system:String x:Key="departures">Išvykimas</system:String>
+    <system:String x:Key="arrivals">Atvykimas</system:String>
+
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">nepavyko rasti!\nBandyk iš naujo!</system:String>
     <system:String x:Key="errorEmpty">negali būti tuščia!\nBandyk iš naujo!</system:String>
