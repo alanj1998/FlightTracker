@@ -1,0 +1,632 @@
+﻿{
+	"AirportBoardsResult": {
+		"airport": "EIDW",
+		"airport_info": {
+			"airport_code": "EIDW",
+			"name": "Dublin Int'l",
+			"elevation": 242.0,
+			"city": "Dublin",
+			"state": "",
+			"longitude": -6.270075,
+			"latitude": 53.421333,
+			"timezone": ":Europe/Dublin",
+			"country_code": "IE",
+			"wiki_url": "https://en.wikipedia.org/wiki/Dublin_Airport",
+			"alternate_ident": "DUB"
+		},
+		"arrivals": {
+			"num_flights": 2,
+			"next_offset": 2,
+			"flights": [
+				{
+					"ident": "EIN175",
+					"atc_ident": "EIN17R",
+					"faFlightID": "EIN175-1517639169-airline-0007",
+					"airline": "EIN",
+					"airline_iata": "EI",
+					"flightnumber": "175",
+					"tailnumber": "EI-DVJ",
+					"type": "Form_Airline",
+					"codeshares": "BAW5975,ETD7982",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": false,
+					"origin": {
+						"code": "EGLL",
+						"city": "London, England",
+						"alternate_ident": "LHR",
+						"airport_name": "London Heathrow"
+					},
+					"destination": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"filed_ete": 3300,
+					"filed_airspeed_kts": 265,
+					"distance_filed": 279,
+					"filed_departure_time": {
+						"epoch": 1517856300,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:45PM",
+						"date": "05/02/2018",
+						"localtime": 1517856300
+					},
+					"estimated_departure_time": {
+						"epoch": 1517856420,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:47PM",
+						"date": "05/02/2018",
+						"localtime": 1517856420
+					},
+					"actual_departure_time": {
+						"epoch": 1517856420,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:47PM",
+						"date": "05/02/2018",
+						"localtime": 1517856420
+					},
+					"departure_delay": 0,
+					"filed_arrival_time": {
+						"epoch": 1517859600,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:40PM",
+						"date": "05/02/2018",
+						"localtime": 1517859600
+					},
+					"estimated_arrival_time": {
+						"epoch": 1517859257,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:34PM",
+						"date": "05/02/2018",
+						"localtime": 1517859257
+					},
+					"actual_arrival_time": {
+						"epoch": 1517859066,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:31PM",
+						"date": "05/02/2018",
+						"localtime": 1517859066
+					},
+					"arrival_delay": -1380,
+					"status": "Landed / Taxiing",
+					"progress_percent": 100,
+					"aircrafttype": "A320",
+					"full_aircrafttype": "A320",
+					"adhoc": false
+				},
+				{
+					"ident": "BAW828",
+					"atc_ident": "BAW68WG",
+					"faFlightID": "BAW828-1517639168-airline-0183",
+					"airline": "BAW",
+					"airline_iata": "BA",
+					"flightnumber": "828",
+					"tailnumber": "G-EUPO",
+					"type": "Form_Airline",
+					"codeshares": "AAL6391,EIN8328,JAL7823",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": false,
+					"origin": {
+						"code": "EGLL",
+						"city": "London, England",
+						"alternate_ident": "LHR",
+						"airport_name": "London Heathrow"
+					},
+					"destination": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"filed_ete": 2880,
+					"filed_airspeed_kts": 224,
+					"distance_filed": 279,
+					"filed_departure_time": {
+						"epoch": 1517854800,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:20PM",
+						"date": "05/02/2018",
+						"localtime": 1517854800
+					},
+					"estimated_departure_time": {
+						"epoch": 1517855880,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:38PM",
+						"date": "05/02/2018",
+						"localtime": 1517855880
+					},
+					"actual_departure_time": {
+						"epoch": 1517855934,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:38PM",
+						"date": "05/02/2018",
+						"localtime": 1517855934
+					},
+					"departure_delay": 60,
+					"filed_arrival_time": {
+						"epoch": 1517857680,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:08PM",
+						"date": "05/02/2018",
+						"localtime": 1517857680
+					},
+					"estimated_arrival_time": {
+						"epoch": 1517858887,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:28PM",
+						"date": "05/02/2018",
+						"localtime": 1517858887
+					},
+					"actual_arrival_time": {
+						"epoch": 1517858887,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:28PM",
+						"date": "05/02/2018",
+						"localtime": 1517858887
+					},
+					"arrival_delay": -660,
+					"status": "Landed / Taxiing",
+					"progress_percent": 100,
+					"aircrafttype": "A319",
+					"full_aircrafttype": "A319",
+					"adhoc": false
+				}
+			]
+		},
+		"departures": {
+			"num_flights": 2,
+			"next_offset": 2,
+			"flights": [
+				{
+					"ident": "SAS538",
+					"faFlightID": "SAS538-1517639172-airline-0193",
+					"airline": "SAS",
+					"airline_iata": "SK",
+					"flightnumber": "538",
+					"tailnumber": "OY-KAM",
+					"type": "Form_Airline",
+					"codeshares": "ETD7494",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": true,
+					"origin": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"destination": {
+						"code": "EKCH",
+						"city": "Copenhagen",
+						"alternate_ident": "CPH",
+						"airport_name": "Copenhagen"
+					},
+					"filed_ete": 6600,
+					"filed_airspeed_kts": 366,
+					"distance_filed": 772,
+					"filed_departure_time": {
+						"epoch": 1517832600,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "12:10PM",
+						"date": "05/02/2018",
+						"localtime": 1517832600
+					},
+					"estimated_departure_time": {
+						"epoch": 1517833260,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "12:21PM",
+						"date": "05/02/2018",
+						"localtime": 1517833260
+					},
+					"actual_departure_time": {
+						"epoch": -1,
+						"tz": "IST",
+						"dow": "Thursday",
+						"time": "12:59AM",
+						"date": "01/01/1970",
+						"localtime": 3599
+					},
+					"departure_delay": -300,
+					"filed_arrival_time": {
+						"epoch": 1517839200,
+						"tz": "CET",
+						"dow": "Monday",
+						"time": "03:00PM",
+						"date": "05/02/2018",
+						"localtime": 1517842800
+					},
+					"estimated_arrival_time": {
+						"epoch": -1,
+						"tz": "CET",
+						"dow": "Thursday",
+						"time": "12:59AM",
+						"date": "01/01/1970",
+						"localtime": 3599
+					},
+					"actual_arrival_time": {
+						"epoch": -1,
+						"tz": "CET",
+						"dow": "Thursday",
+						"time": "12:59AM",
+						"date": "01/01/1970",
+						"localtime": 3599
+					},
+					"arrival_delay": -300,
+					"status": "result unknown",
+					"progress_percent": 100,
+					"aircrafttype": "A320",
+					"full_aircrafttype": "A320",
+					"adhoc": false
+				},
+				{
+					"ident": "KLM932",
+					"faFlightID": "KLM932-1517637300-schedule-0000",
+					"airline": "KLM",
+					"airline_iata": "KL",
+					"flightnumber": "932",
+					"tailnumber": "PH-BGR",
+					"type": "Form_Airline",
+					"codeshares": "AFL3403,KQA932,DAL9609,GLO5567,CXA9760,JAI8906",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": true,
+					"origin": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"destination": {
+						"code": "EHAM",
+						"city": "Amsterdam",
+						"alternate_ident": "AMS",
+						"airport_name": "Amsterdam Schiphol"
+					},
+					"filed_ete": 4500,
+					"filed_airspeed_kts": 257,
+					"distance_filed": 467,
+					"filed_departure_time": {
+						"epoch": 1517810100,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "05:55AM",
+						"date": "05/02/2018",
+						"localtime": 1517810100
+					},
+					"estimated_departure_time": {
+						"epoch": 1517811480,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:18AM",
+						"date": "05/02/2018",
+						"localtime": 1517811480
+					},
+					"actual_departure_time": {
+						"epoch": -1,
+						"tz": "IST",
+						"dow": "Thursday",
+						"time": "12:59AM",
+						"date": "01/01/1970",
+						"localtime": 3599
+					},
+					"departure_delay": 780,
+					"filed_arrival_time": {
+						"epoch": 1517814600,
+						"tz": "CET",
+						"dow": "Monday",
+						"time": "08:10AM",
+						"date": "05/02/2018",
+						"localtime": 1517818200
+					},
+					"estimated_arrival_time": {
+						"epoch": -1,
+						"tz": "CET",
+						"dow": "Thursday",
+						"time": "12:59AM",
+						"date": "01/01/1970",
+						"localtime": 3599
+					},
+					"actual_arrival_time": {
+						"epoch": -1,
+						"tz": "CET",
+						"dow": "Thursday",
+						"time": "12:59AM",
+						"date": "01/01/1970",
+						"localtime": 3599
+					},
+					"arrival_delay": 480,
+					"status": "result unknown",
+					"progress_percent": 100,
+					"aircrafttype": "B737",
+					"full_aircrafttype": "B737",
+					"adhoc": false
+				}
+			]
+		},
+		"enroute": {
+			"num_flights": 2,
+			"next_offset": 2,
+			"flights": [
+				{
+					"ident": "EIN3253",
+					"faFlightID": "EIN3253-1517733017-fa-0001",
+					"airline": "EIN",
+					"airline_iata": "EI",
+					"flightnumber": "3253",
+					"type": "Form_Airline",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": false,
+					"origin": {
+						"code": "EGPH",
+						"city": "Edinburgh, Scotland",
+						"alternate_ident": "EDI",
+						"airport_name": "Edinburgh"
+					},
+					"destination": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"filed_ete": 2700,
+					"filed_airspeed_kts": 199,
+					"distance_filed": 210,
+					"filed_departure_time": {
+						"epoch": 1517831100,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "11:45AM",
+						"date": "05/02/2018",
+						"localtime": 1517831100
+					},
+					"estimated_departure_time": {
+						"epoch": 1517831400,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "11:50AM",
+						"date": "05/02/2018",
+						"localtime": 1517831400
+					},
+					"actual_departure_time": { "epoch": 0 },
+					"filed_arrival_time": {
+						"epoch": 1517833800,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "12:30PM",
+						"date": "05/02/2018",
+						"localtime": 1517833800
+					},
+					"estimated_arrival_time": {
+						"epoch": 1517834100,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "12:35PM",
+						"date": "05/02/2018",
+						"localtime": 1517834100
+					},
+					"actual_arrival_time": { "epoch": 0 },
+					"arrival_delay": 300,
+					"status": "Taxiing / Left Gate",
+					"progress_percent": -1,
+					"adhoc": false
+				},
+				{
+					"ident": "EIN3403",
+					"faFlightID": "EIN3403-1517731123-fa-0001",
+					"airline": "EIN",
+					"airline_iata": "EI",
+					"flightnumber": "3403",
+					"type": "Form_Airline",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": false,
+					"origin": {
+						"code": "EIDL",
+						"city": "Carrickfinn, County Donegal",
+						"alternate_ident": "CFN",
+						"airport_name": "Donegal"
+					},
+					"destination": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"filed_ete": 1440,
+					"filed_airspeed_kts": 199,
+					"distance_filed": 140,
+					"filed_departure_time": {
+						"epoch": 1517841600,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "02:40PM",
+						"date": "05/02/2018",
+						"localtime": 1517841600
+					},
+					"estimated_departure_time": {
+						"epoch": 1517841480,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "02:38PM",
+						"date": "05/02/2018",
+						"localtime": 1517841480
+					},
+					"actual_departure_time": { "epoch": 0 },
+					"filed_arrival_time": {
+						"epoch": 1517843040,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "03:04PM",
+						"date": "05/02/2018",
+						"localtime": 1517843040
+					},
+					"estimated_arrival_time": {
+						"epoch": 1517842970,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "03:02PM",
+						"date": "05/02/2018",
+						"localtime": 1517842970
+					},
+					"actual_arrival_time": { "epoch": 0 },
+					"arrival_delay": -70,
+					"status": "Taxiing / Left Gate",
+					"progress_percent": -1,
+					"adhoc": false
+				}
+			]
+		},
+		"scheduled": {
+			"num_flights": 2,
+			"next_offset": 2,
+			"flights": [
+				{
+					"ident": "EIN3258",
+					"faFlightID": "EIN3258-1517726642-fa-0003",
+					"airline": "EIN",
+					"airline_iata": "EI",
+					"flightnumber": "3258",
+					"type": "Form_Airline",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": false,
+					"origin": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"destination": {
+						"code": "EGPH",
+						"city": "Edinburgh, Scotland",
+						"alternate_ident": "EDI",
+						"airport_name": "Edinburgh"
+					},
+					"filed_ete": 3300,
+					"filed_airspeed_kts": 199,
+					"distance_filed": 210,
+					"filed_departure_time": {
+						"epoch": 1517853300,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "05:55PM",
+						"date": "05/02/2018",
+						"localtime": 1517853300
+					},
+					"estimated_departure_time": {
+						"epoch": 1517853900,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:05PM",
+						"date": "05/02/2018",
+						"localtime": 1517853900
+					},
+					"actual_departure_time": { "epoch": 0 },
+					"filed_arrival_time": {
+						"epoch": 1517856600,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:50PM",
+						"date": "05/02/2018",
+						"localtime": 1517856600
+					},
+					"estimated_arrival_time": {
+						"epoch": 1517857200,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:00PM",
+						"date": "05/02/2018",
+						"localtime": 1517857200
+					},
+					"actual_arrival_time": { "epoch": 0 },
+					"arrival_delay": 600,
+					"status": "Scheduled",
+					"progress_percent": -1,
+					"adhoc": false
+				},
+				{
+					"ident": "EIN3228",
+					"faFlightID": "EIN3228-1517728029-fa-0003",
+					"airline": "EIN",
+					"airline_iata": "EI",
+					"flightnumber": "3228",
+					"type": "Form_Airline",
+					"blocked": false,
+					"diverted": false,
+					"cancelled": false,
+					"origin": {
+						"code": "EIDW",
+						"city": "Dublin",
+						"alternate_ident": "DUB",
+						"airport_name": "Dublin Int'l"
+					},
+					"destination": {
+						"code": "EGPF",
+						"city": "Glasgow, Scotland",
+						"alternate_ident": "GLA",
+						"airport_name": "Glasgow Int'l"
+					},
+					"filed_ete": 3000,
+					"filed_airspeed_kts": 193,
+					"distance_filed": 185,
+					"filed_departure_time": {
+						"epoch": 1517854800,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:20PM",
+						"date": "05/02/2018",
+						"localtime": 1517854800
+					},
+					"estimated_departure_time": {
+						"epoch": 1517855400,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "06:30PM",
+						"date": "05/02/2018",
+						"localtime": 1517855400
+					},
+					"actual_departure_time": { "epoch": 0 },
+					"filed_arrival_time": {
+						"epoch": 1517857800,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:10PM",
+						"date": "05/02/2018",
+						"localtime": 1517857800
+					},
+					"estimated_arrival_time": {
+						"epoch": 1517858400,
+						"tz": "GMT",
+						"dow": "Monday",
+						"time": "07:20PM",
+						"date": "05/02/2018",
+						"localtime": 1517858400
+					},
+					"actual_arrival_time": { "epoch": 0 },
+					"arrival_delay": 600,
+					"status": "Scheduled",
+					"progress_percent": -1,
+					"adhoc": false
+				}
+			]
+		}
+	}
+}

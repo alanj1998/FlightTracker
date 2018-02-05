@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AirportBoardsResult.cs" />
     <Compile Include="Animate.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="FlightDetails.xaml.cs">
@@ -191,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Images\exitLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\testData.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
