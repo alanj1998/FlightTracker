@@ -5,6 +5,7 @@
     <!-- Main Menu Window -->
     <system:String x:Key="clickMore">Cliquez pour Plus d'Options</system:String>
     <system:String x:Key="clickAirportID">Trouver des Vols par ID de l'Aéroport</system:String>
+    <system:String x:Key="clickAirportName">Trouver des Vols par Nom d'Aéroport</system:String>
     <system:String x:Key="clickAirline">Trouver des Vols par Nom de Compagnie Aérienne</system:String>
     <system:String x:Key="exit">Fermer l'Application</system:String>
     <system:String x:Key="settings">Paramètres</system:String>
