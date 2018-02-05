@@ -2,6 +2,7 @@
   //All paths to images, files etc.
   //Languages
   "languageList": "Assets/Languages/LangList.json",
+  "flightAwareData": "Assets/FlightAware.json",
   "languages": {
     "en-IE": "Assets/Languages/en-IE.xaml",
     "pl-PL": "Assets/Languages/pl-PL.xaml",

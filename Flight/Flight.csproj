@@ -154,6 +154,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Assets\FlightAware.json" />
     <None Include="Assets\Languages\LangList.json" />
     <None Include="Assets\Paths.json" />
     <None Include="Assets\UserSettings.json" />

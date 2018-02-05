@@ -93,6 +93,7 @@ namespace FlightTracker
         private string languageList;
         private Dictionary<string, string> languages;
         private Dictionary<string, string> images;
+        private string flightAware;
 
         public string LanguageList
         {
@@ -101,6 +102,15 @@ namespace FlightTracker
                 return this.languageList;
             }
         }
+
+        public string FlightAware
+        {
+            get
+            {
+                return this.flightAware;
+            }
+        }
+
 
         public Dictionary<string, string> Languages
         {
@@ -118,11 +128,12 @@ namespace FlightTracker
             }
         }
 
-        public Paths(string languageList, Dictionary<string,string> languages, Dictionary<string, string> images)
+        public Paths(string languageList, Dictionary<string,string> languages, Dictionary<string, string> images, string flightAware)
         {
             this.languageList = languageList;
             this.languages = languages;
             this.images = images;
+            this.flightAware = flightAware;
         }
     }
 
