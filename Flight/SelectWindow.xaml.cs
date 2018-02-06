@@ -16,6 +16,14 @@ namespace FlightTracker
 {
     /// <summary>
     /// Interaction logic for SelectWindow.xaml
+    /// 
+    /// Left To Do:
+    /// 1. Match Airline Codes to Images
+    /// 2. Match SelectWindow Data to flightsearch
+    /// 3. Comment Code, change names
+    /// 4. Sort out folder design
+    /// 5. Change WPF design to implement panels
+    /// 
     /// </summary>
     public partial class SelectWindow : Window
     {
