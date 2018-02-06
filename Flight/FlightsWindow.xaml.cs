@@ -24,10 +24,11 @@ namespace FlightTracker
         private MainWindow MainMenu;
         private int pageNo = 0;
         private Timer clockTimer = new Timer();
+        private Timer changeSlide = new Timer(10000);
         private List<FlightDetails> departureFlights = new List<FlightDetails>();
         private List<FlightDetails> arrivalFlights = new List<FlightDetails>();
-        private const int MAX_NUMBER_PER_PAGE = 7;
         private CultureInfo dateFormat;
+        private LoadFlightData data = new LoadFlightData();
 
         public FlightsWindow(MainWindow main)
         {
@@ -48,7 +49,7 @@ namespace FlightTracker
             clockTimer.AutoReset = true;
             clockTimer.Start();
 
-            /* Test Data */
+            /* Test Data
             departureFlights = new List<FlightDetails>() {
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "Barcelona")),
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "Mad")),
@@ -71,10 +72,14 @@ namespace FlightTracker
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "Rzeszow")),
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "London"))
         };
-
-            departureFlights.Sort();
-            arrivalFlights.Sort();
+        */
             SetFlights();
+        }
+
+        ~FlightsWindow()
+        {
+            this.clockTimer.Dispose();
+            this.changeSlide.Dispose();
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
@@ -102,23 +107,35 @@ namespace FlightTracker
 
         private void SetFlights()
         {
-            Timer changeSlide = new Timer(10000);
             changeSlide.AutoReset = true;
             changeSlide.Elapsed += changeSlide_Elapsed;
-            changeSlide.Start();
 
+            departureFlights = data.Departures;
+            arrivalFlights = data.Arrivals;
+            departureFlights.Sort();
+            arrivalFlights.Sort();
 
-            for (int i = 0; i < MAX_NUMBER_PER_PAGE; i++)
+            for (int i = 0; i < 4; i++)
             {
                 Departures.Children.Add(departureFlights[i]);
                 Arrivals.Children.Add(arrivalFlights[i]);
             }
+
+            changeSlide.Start();
+        }
+
+        private void SetAirportInfo()
+        {
+            txBlockAirportID.Text = data.AirportInfo.AirportCode;
+            txBlockAirportLocation.Text = data.AirportInfo.AirportLocation;
+            txBlockAirportName.Text = data.AirportInfo.AirportName;
         }
 
         private void ChangePage()
         {
             double noOfFlights = 0;
             int pages = 0;
+            const int MAX_NUMBER_PER_PAGE = 7;
 
             if (this.arrivalFlights.Count > this.departureFlights.Count)
                 noOfFlights = this.departureFlights.Count;
@@ -148,6 +165,7 @@ namespace FlightTracker
 
         private void AddFlights(List<FlightDetails> l, StackPanel type)
         {
+            const int MAX_NUMBER_PER_PAGE = 7;
             int lastFlightIndex = GetLastIndex();
             if (lastFlightIndex > l.Count)
                 lastFlightIndex = l.Count;
@@ -162,6 +180,7 @@ namespace FlightTracker
 
         private int GetLastIndex()
         {
+            const int MAX_NUMBER_PER_PAGE = 7;
             int lastFlightIndex = 0;
 
             if (this.pageNo == 0)

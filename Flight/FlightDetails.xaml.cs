@@ -39,8 +39,8 @@ namespace FlightTracker
         //Set up the view of the flight
         private void SetFlightInfo()
         {
-            txBlockAirlineCode.Text = this.flight.AirlineCode;
-            txBlockTime.Text = this.flight.Time.ToShortTimeString();
+            txBlockAirlineCode.Text = this.flight.FlightCode;
+            txBlockTime.Text = this.flight.Time;
             txBlockTown.Text = this.flight.Town;
             imageLogo.Source = new BitmapImage(this.flight.PathToLogo);
         }

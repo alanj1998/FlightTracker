@@ -69,6 +69,7 @@
       <DependentUpon>FlightsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="JSON.cs" />
+    <Compile Include="LoadData.cs" />
     <Compile Include="SelectWindow.xaml.cs">
       <DependentUpon>SelectWindow.xaml</DependentUpon>
     </Compile>
