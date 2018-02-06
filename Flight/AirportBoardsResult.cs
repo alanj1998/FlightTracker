@@ -67,10 +67,10 @@ namespace FlightTracker
 
     abstract class Flights
     {
-        [JsonProperty("ident")]
+        [JsonProperty("flightnumber")]
         public string FlightID { get; set; }
 
-        [JsonProperty("airline")]
+        [JsonProperty("airline_iata")]
         public string AirlineCode { get; set; }
 
         [JsonProperty("cancelled")]
@@ -119,13 +119,11 @@ namespace FlightTracker
 
     abstract class FlightTime
     {
-        private string time;
-
         [JsonProperty("dow")]
         public string Day { get; set; }
 
         [JsonProperty("time")]
-        public string Time { get { return this.time; } set { this.time = DateTime.Parse(value).ToShortTimeString(); } }
+        public string Time { get; set; } 
 
         [JsonProperty("date")]
         public string Date { get; set; }

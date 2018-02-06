@@ -8,16 +8,17 @@ namespace FlightTracker
 {
     public class Flight
     {
-        private string time;
+        private DateTime dateAndTime;
         private string flightCode;
         private Uri pathToLogo;
         private string town;
 
-        public string Time
+
+        public DateTime Time
         {
             get
             {
-                return this.time;
+                return this.dateAndTime;
             }
         }
         public string FlightCode
@@ -42,13 +43,12 @@ namespace FlightTracker
             }
         }
 
-        public Flight(string time, string flightCode, string town, Uri logo = null)
+        public Flight(string time, string date, string flightCode, string town, Uri logo = null)
         {
             time.Replace(" ", "");
-            this.time = DateTime.Parse(time).ToString("HH:mm");
+            this.dateAndTime = DateTime.Parse(date + " " + time);
             this.flightCode = flightCode;
             this.town = town;
-
             if (logo == null)
                 this.pathToLogo = new Uri(AppPaths.Path.Images["Airline Name"], UriKind.Relative);
             else

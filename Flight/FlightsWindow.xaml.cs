@@ -28,9 +28,9 @@ namespace FlightTracker
         private List<FlightDetails> departureFlights = new List<FlightDetails>();
         private List<FlightDetails> arrivalFlights = new List<FlightDetails>();
         private CultureInfo dateFormat;
-        private LoadFlightData data = new LoadFlightData();
+        private LoadFlightData data;
 
-        public FlightsWindow(MainWindow main)
+        public FlightsWindow(MainWindow main, string airportCode, string airlineCode = null)
         {
             InitializeComponent();
 
@@ -48,6 +48,8 @@ namespace FlightTracker
             clockTimer.Elapsed += clockTimer_Elapsed;
             clockTimer.AutoReset = true;
             clockTimer.Start();
+
+            data = new LoadFlightData(airportCode, airlineCode);
 
             /* Test Data
             departureFlights = new List<FlightDetails>() {
@@ -74,6 +76,7 @@ namespace FlightTracker
         };
         */
             SetFlights();
+            SetAirportInfo();
         }
 
         ~FlightsWindow()
@@ -107,15 +110,16 @@ namespace FlightTracker
 
         private void SetFlights()
         {
+            const int MAX_NUMBER_PER_PAGE = 7;
             changeSlide.AutoReset = true;
             changeSlide.Elapsed += changeSlide_Elapsed;
 
-            departureFlights = data.Departures;
+            departureFlights = data.Arrivals;
             arrivalFlights = data.Arrivals;
             departureFlights.Sort();
             arrivalFlights.Sort();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < MAX_NUMBER_PER_PAGE; i++)
             {
                 Departures.Children.Add(departureFlights[i]);
                 Arrivals.Children.Add(arrivalFlights[i]);
@@ -155,11 +159,8 @@ namespace FlightTracker
             Dispatcher.Invoke(() =>
             {
                 int flightsOnDisplay = Departures.Children.Count;
-                for (int i = 0; i < flightsOnDisplay; i++)
-                {
-                    Departures.Children.RemoveAt(0);
-                    Arrivals.Children.RemoveAt(0);
-                }
+                Departures.Children.Clear();
+                Arrivals.Children.Clear();
             });
         }
 

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace FlightTracker
 {
@@ -13,6 +13,7 @@ namespace FlightTracker
         private List<FlightDetails> arrivals = new List<FlightDetails>();
         private List<FlightDetails> departures = new List<FlightDetails>();
         private AirportInfo info;
+
 
         public List<FlightDetails> Arrivals
         {
@@ -38,29 +39,27 @@ namespace FlightTracker
             }
         }
 
-        public LoadFlightData()
+        public LoadFlightData(string code, string airline = null)
         {
+            SplitData(GetData(code, airline));            
             //     AirportData data = JSON.GetJSONData<AirportData>("Assets/testData.json");
-            AirportData data = GetData();
-            //For testing purposes
-            SplitData(data);
         }
 
         private void SplitData(AirportData data)
         {
-            FlightData f = data.boardsResult;
-            AddToLists(f.Arrivals.Flights, this.arrivals);
-            AddToLists(f.EnRoute.Flights, this.arrivals);
-            AddToLists(f.Departures.Flights, this.departures);
-            AddToLists(f.Scheduled.Flights, this.departures);
-            this.info = f.Info;
+            AddToLists(data.boardsResult.Arrivals.Flights, this.arrivals);
+            AddToLists(data.boardsResult.EnRoute.Flights, this.arrivals);
+            AddToLists(data.boardsResult.Departures.Flights, this.departures);
+            AddToLists(data.boardsResult.Scheduled.Flights, this.departures);
+            this.info = data.boardsResult.Info;
         }
 
         private void AddToLists<T>(List<T> data, List<FlightDetails> listToAddTo)
         {
-            foreach(T f in data)
+            foreach (T f in data)
             {
                 string t = "",
+                       date = "",
                        airlineCode = "",
                        town = "",
                        flightCode = "";
@@ -72,6 +71,7 @@ namespace FlightTracker
                     {
                         ArrivalFlights arrival = f as ArrivalFlights;
                         t = arrival.ArrivalTime.Time;
+                        date = arrival.ArrivalTime.Date;
                         airlineCode = arrival.AirlineCode;
                         town = SplitTownName(arrival.Origin.City);
                         flightCode = arrival.FlightID;
@@ -80,17 +80,19 @@ namespace FlightTracker
                     {
                         DepartureFlights departure = f as DepartureFlights;
                         t = departure.DepartureTime.Time;
+                        date = departure.DepartureTime.Date;
                         airlineCode = departure.AirlineCode;
                         town = SplitTownName(departure.Destination.City);
                         flightCode = departure.FlightID;
                     }
                 }
-                else if(typeOfFlight.Cancelled == true || typeOfFlight.ProgressPercentage == -1)
+                else if (typeOfFlight.Cancelled == true || typeOfFlight.ProgressPercentage == -1)
                 {
                     if (f.GetType() == typeof(ArrivalFlights))
                     {
                         ArrivalFlights arrival = f as ArrivalFlights;
                         t = arrival.EstimatedArrivalTime.Time;
+                        date = arrival.EstimatedArrivalTime.Date;
                         airlineCode = arrival.AirlineCode;
                         town = SplitTownName(arrival.Origin.City);
                         flightCode = arrival.FlightID;
@@ -99,15 +101,20 @@ namespace FlightTracker
                     {
                         DepartureFlights departure = f as DepartureFlights;
                         t = departure.EstimatedDepartureTime.Time;
+                        date = departure.EstimatedDepartureTime.Date;
                         airlineCode = departure.AirlineCode;
                         town = SplitTownName(departure.Destination.City);
                         flightCode = departure.FlightID;
                     }
                 }
 
-                Flight flight = new Flight(t, flightCode, town);
-                FlightDetails detail = new FlightDetails(flight);
-                listToAddTo.Add(detail);
+                if (t != "" && town != "" && flightCode != "" && date != "")
+                {
+                    Flight flight = new Flight(t, date, airlineCode + flightCode, town);
+                    FlightDetails detail = new FlightDetails(flight);
+                    listToAddTo.Add(detail);
+                }
+                else continue;
             }
         }
 
@@ -119,25 +126,29 @@ namespace FlightTracker
                 return town;
         }
 
-        private AirportData GetData()//Dictionary<string, string> data)
+        private AirportData GetData(string airport, string airline)//Dictionary<string, string> data)
         {
-            AirportData results = new AirportData();
-
-            const string URL_STRING = "http://http://flightxml.flightaware.com/json/FlightXML3/AirportBoards?";
+            const string URL_STRING = "http://flightxml.flightaware.com/json/FlightXML3/AirportBoards";
+            AirportData data = new AirportData();
 
             UriBuilder uriBuilder = new UriBuilder(URL_STRING);
-            uriBuilder.Query += "airport_code=EIDW";
-            uriBuilder.UserName = "alanj1998";
-            uriBuilder.Password = "4d5e8497d3ecc47709fce1db7980e4ebcb5fe740";
+            uriBuilder.Query += $"airport_code={airport}&filter=airline";
             Uri url = uriBuilder.Uri;
 
-            using (WebClient web = new WebClient())
-            {
-                string json = web.DownloadString(url);
-                results = JsonConvert.DeserializeObject<AirportData>(json);
-            }
+            string auth = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes("alanj1998:4d5e8497d3ecc47709fce1db7980e4ebcb5fe740")); //Encoding creditentials to base64 like advised by api
 
-            return results;
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+            request.Headers.Add(HttpRequestHeader.Authorization, $"Basic {auth}");
+            request.ContentType = "text/json";
+            request.Method = "GET";
+
+            string jsonResponse = "";
+
+            using (WebResponse response = request.GetResponse())
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+                jsonResponse = sr.ReadToEnd();
+
+            return JsonConvert.DeserializeObject<AirportData>(jsonResponse);
         }
     }
 }

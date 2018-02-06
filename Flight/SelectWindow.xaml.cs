@@ -39,7 +39,7 @@ namespace FlightTracker
         {
             if (!isEmpty)
             {
-                MessageBoxResult result = MessageBox.Show($"{Application.Current.Resources[this.choice].ToString()} {Application.Current.Resources["errorNoFlights"].ToString()}", Application.Current.Resources["errorTitle"].ToString() , MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
+                MessageBoxResult result = MessageBox.Show($"{Application.Current.Resources[this.choice].ToString()} {Application.Current.Resources["errorNoFlights"].ToString()}", Application.Current.Resources["errorTitle"].ToString(), MessageBoxButton.YesNo, MessageBoxImage.Warning, MessageBoxResult.No);
                 if (result == MessageBoxResult.No)
                 {
                     this.Close();
@@ -53,17 +53,22 @@ namespace FlightTracker
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (txBoxChoice.Text != "")
-            {
-                this.main.Hide();
-                this.Close();
-                FlightsWindow flight = new FlightsWindow(main);
-                flight.Show();
-            }
-            else
-            {
-                ErrorMessage(true);
-            } //For testing ErrorMessage()
+            /* WIP Getting Code
+            string airportCode = txBoxChoice.Text;
+            bool isAirportCode = false;
+
+            ErrorMessage(true);
+            */
+
+            /* FOR TESTING */
+
+            this.main.Hide();
+            this.Close();
+
+            FlightsWindow flight = new FlightsWindow(main, "EIDW");
+            flight.Show();
+
+
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
@@ -74,7 +79,7 @@ namespace FlightTracker
 
         private void btnSearch_MouseEnter(object sender, MouseEventArgs e)
         {
-            Animation.Animate(TextBlock.PaddingProperty, new Thickness(130,3,0,0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = $"...{Application.Current.Resources["search"].ToString()}"; });
+            Animation.Animate(TextBlock.PaddingProperty, new Thickness(130, 3, 0, 0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = $"...{Application.Current.Resources["search"].ToString()}"; });
         }
 
         private void btnSearch_MouseLeave(object sender, MouseEventArgs e)

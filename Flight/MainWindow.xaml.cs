@@ -47,9 +47,6 @@ namespace FlightTracker
 
             //Set first page to 0
             this.pageNo = 0;
-
-            //Testing
-            AirportData boardsResult = JSON.GetJSONData<AirportData>("Assets/testData.json");
         }
 
         #region Animation Methods
