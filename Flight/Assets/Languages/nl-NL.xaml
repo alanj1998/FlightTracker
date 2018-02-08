@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <!-- Thanks to Darkfizch from www.promods.net for translation! -->
+    <!-- Main Menu Window -->
+    <system:String x:Key="clickMore">Klik voor meer Opties</system:String>
+    <system:String x:Key="clickAirportName">Vind Vluchten op Naam van Luchthaven</system:String>
+    <system:String x:Key="clickAirportID">Vind Vluchten op ID van Luchthaven</system:String>
+    <system:String x:Key="clickAirline">Vind Vluchten op Naam van Vliegmaatschappij</system:String>
+    <system:String x:Key="exit">Sluit App</system:String>
+    <system:String x:Key="settings">Instellingen</system:String>
+    <system:String x:Key="clickLocalisation">Vind Vluchten in Jouw Omgeving</system:String>
+    
+    <!-- Select Window -->
+    <system:String x:Key="titleSelect">Voeg Vluchtinformatie Toe</system:String>
+    <system:String x:Key="search">Zoek</system:String>
+    <system:String x:Key="enter">Vul In</system:String>
+
+    <!-- Flights Window -->
+    <system:String x:Key="airportLocation">
+        Locatie van de Luchthaven</system:String>
+    <system:String x:Key="flightDetails">Vluchtdetails</system:String>
+    <system:String x:Key="departures">Vertrek</system:String>
+    <system:String x:Key="arrivals">Aankomst</system:String>
+
+    <!-- Errors -->
+    <system:String x:Key="errorNoFlights">kon niet gevonden worden. Probeer opnieuw!</system:String>
+    <system:String x:Key="errorEmpty">mag niet leeg zijn. Probeer opnieuw!</system:String>
+    <system:String x:Key="errorTitle">Zoekfout!</system:String>
+    
+    <!-- Success -->
+    <system:String x:Key="success">Gelukt!</system:String>
+    <system:String x:Key="successSave">Instellingen succesvol opgeslagen!</system:String>
+    
+    <!-- Other -->
+    <system:String x:Key="airlineName">Vliegmaatschappijnaam</system:String>
+    <system:String x:Key="airportID">Luchthaven ID</system:String>
+    <system:String x:Key="airportName">Luchthavennaam</system:String>
+    <system:String x:Key="language">Taal</system:String>
+    <system:String x:Key="locale">Lokale instellingen</system:String>
+    <system:String x:Key="timeFormat">Tijdsformaat</system:String>
+    <system:String x:Key="save">Opslaan</system:String>
+</ResourceDictionary>

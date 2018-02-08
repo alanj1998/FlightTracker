@@ -11,7 +11,8 @@
     "lt-LT": "Assets/Languages/lt-LT.xaml",
     "ru-RU": "Assets/Languages/ru-RU.xaml",
     "es-ES": "Assets/Languages/es-ES.xaml",
-    "de-DE": "Assets/Languages/de-DE.xaml"
+    "de-DE": "Assets/Languages/de-DE.xaml",
+    "nl-NL": "Assets/Languages/nl-NL.xaml"
   },
 
   //Images

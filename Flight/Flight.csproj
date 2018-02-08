@@ -77,6 +77,10 @@
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Page Include="Assets\Languages\nl-NL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Assets\Languages\de-DE.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
