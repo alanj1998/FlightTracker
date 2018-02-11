@@ -1,20 +1,20 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-    
+    <!-- Thanks to Krzysztof Labak for help in translations -->
     <!-- Main Menu Window -->
     <system:String x:Key="clickMore">Haga Clic para Obtener Más Opciones</system:String>
     <system:String x:Key="clickAirportName">Buscar Vuelos por Nombre del Aeropuerto</system:String>
     <system:String x:Key="clickAirportID">Buscar Vuelos por ID del Aeropuerto</system:String>
     <system:String x:Key="clickAirline">Buscar Vuelos por Nombre de Aerolínea</system:String>
     <system:String x:Key="exit">Cerrar app</system:String>
-    <system:String x:Key="settings">Configuraciones</system:String>
+    <system:String x:Key="settings">Configuración</system:String>
     <system:String x:Key="clickLocalisation">Encuentre Vuelos en su Área</system:String>
     
     <!-- Select Window -->
     <system:String x:Key="titleSelect">Añadir Información de Vuelo</system:String>
     <system:String x:Key="search">Buscar</system:String>
-    <system:String x:Key="enter">Ingrese</system:String>
+    <system:String x:Key="enter">Introduzca</system:String>
 
     <!-- Flights Window -->
     <system:String x:Key="airportLocation">Ubicación Del Aeropuerto</system:String>
@@ -25,7 +25,7 @@
     <!-- Errors -->
     <system:String x:Key="errorNoFlights">no pudo ser encontrado.\n¡Inténtalo de nuevo!</system:String>
     <system:String x:Key="errorEmpty">no puede estar vacío!\n¡Inténtalo de nuevo!</system:String>
-    <system:String x:Key="errorTitle">Error de Búsqueda!</system:String>
+    <system:String x:Key="errorTitle">¡Error de Búsqueda!</system:String>
     
     <!-- Success -->
     <system:String x:Key="success">¡Éxito!</system:String>
@@ -36,7 +36,7 @@
     <system:String x:Key="airportID">ID del Aeropuerto</system:String>
     <system:String x:Key="airportName">Nombre del Aeropuerto</system:String>
     <system:String x:Key="language">Idioma</system:String>
-    <system:String x:Key="locale">Configuraciones Locales</system:String>
+    <system:String x:Key="locale">Configuración Local</system:String>
     <system:String x:Key="timeFormat">Formato de Tiempo</system:String>
-    <system:String x:Key="save">Salvar</system:String>
+    <system:String x:Key="save">Guardar</system:String>
 </ResourceDictionary>
