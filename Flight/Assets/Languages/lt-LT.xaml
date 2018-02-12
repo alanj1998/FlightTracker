@@ -24,9 +24,10 @@
     <system:String x:Key="arrivals">Atvykimas</system:String>
 
     <!-- Errors -->
-    <system:String x:Key="errorNoFlights">nepavyko rasti!\nBandyk iš naujo!</system:String>
-    <system:String x:Key="errorEmpty">Langelis negali buti tuscias!\nBandyk iš naujo!</system:String>
+    <system:String x:Key="errorNoFlights">nepavyko rasti! Bandyk iš naujo!</system:String>
+    <system:String x:Key="errorEmpty">Langelis negali buti tuscias! Bandyk iš naujo!</system:String>
     <system:String x:Key="errorTitle">Paieškos klaida!</system:String>
+    <system:String x:Key="errorNoData">Nėra informacijos apie skrydžius!</system:String>
     
     <!-- Success -->
     <system:String x:Key="success">Sėkmė!</system:String>

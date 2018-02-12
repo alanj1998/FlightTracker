@@ -3,6 +3,7 @@
   //Languages
   "languageList": "Assets/Languages/LangList.json",
   "flightAwareData": "Assets/FlightAware.json",
+  "airports": "Assets/AirportsList - MWGG Github/airports.json",
   "languages": {
     "en-IE": "Assets/Languages/en-IE.xaml",
     "pl-PL": "Assets/Languages/pl-PL.xaml",

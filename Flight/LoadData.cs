@@ -45,7 +45,7 @@ namespace FlightTracker
             //     AirportData data = JSON.GetJSONData<AirportData>("Assets/testData.json");
         }
 
-        private void SplitData(AirportData data)
+        private void SplitData(AirportBoards data)
         {
             AddToLists(data.boardsResult.Arrivals.Flights, this.arrivals);
             AddToLists(data.boardsResult.EnRoute.Flights, this.arrivals);
@@ -126,9 +126,9 @@ namespace FlightTracker
                 return town;
         }
 
-        private AirportData GetData(string airport, string airline)//Dictionary<string, string> data)
+        private AirportBoards GetData(string airport, string airline)//Dictionary<string, string> data)
         {
-            AirportData data = new AirportData();
+            AirportBoards data = new AirportBoards();
 
             Uri url = SetURL(airport, (airline != null) ? airline : null);
             string auth = SetAuthorization();
@@ -144,7 +144,7 @@ namespace FlightTracker
             using (StreamReader sr = new StreamReader(response.GetResponseStream()))
                 jsonResponse = sr.ReadToEnd();
 
-            return JsonConvert.DeserializeObject<AirportData>(jsonResponse);
+            return JsonConvert.DeserializeObject<AirportBoards>(jsonResponse);
         }
 
         private Uri SetURL(string airport, string airline = null)

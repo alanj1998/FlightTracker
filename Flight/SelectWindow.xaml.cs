@@ -61,22 +61,35 @@ namespace FlightTracker
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            /* WIP Getting Code
             string airportCode = txBoxChoice.Text;
-            bool isAirportCode = false;
 
-            ErrorMessage(true);
-            */
+            if (airportCode.Length > 0)
+            {
+                airportCode = new AirportCheckAndConverter(airportCode, choice).ReturnICAOCode();
 
-            /* FOR TESTING */
+                if (airportCode != "")
+                {
+                    this.main.Hide();
+                    this.Close();
 
-            this.main.Hide();
-            this.Close();
-
-            FlightsWindow flight = new FlightsWindow(main, "EIDW");
-            flight.Show();
-
-
+                    FlightsWindow flight = new FlightsWindow(main, airportCode);
+                    if (flight.IsSet)
+                        flight.Show();
+                    else
+                    {
+                        this.Close();
+                        main.Show();
+                    }
+                }
+                else
+                {
+                    this.ErrorMessage(false);
+                }
+            }
+            else
+            {
+                this.ErrorMessage(true);
+            }
         }
 
         private void btnClose_Click(object sender, MouseButtonEventArgs e)

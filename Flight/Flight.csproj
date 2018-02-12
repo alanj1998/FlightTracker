@@ -60,6 +60,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AirportBoardsResult.cs" />
+    <Compile Include="AirportCheckAndConverter.cs" />
+    <Compile Include="AirportData.cs" />
     <Compile Include="Animate.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="FlightDetails.xaml.cs">
@@ -160,6 +162,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Assets\AirportsList - MWGG Github\airports.json" />
+    <None Include="Assets\AirportsList - MWGG Github\LICENSE" />
+    <None Include="Assets\AirportsList - MWGG Github\README.md" />
     <None Include="Assets\FlightAware.json" />
     <None Include="Assets\Languages\LangList.json" />
     <None Include="Assets\Paths.json" />
@@ -200,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\testData.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\AirportsList - MWGG Github\README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

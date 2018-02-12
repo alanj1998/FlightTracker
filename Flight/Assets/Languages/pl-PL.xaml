@@ -23,9 +23,10 @@
     <system:String x:Key="arrivals">Przyloty</system:String>
 
     <!-- Errors -->
-    <system:String x:Key="errorNoFlights">nie znalezione.\nSpróbuj Ponownie!</system:String>
-    <system:String x:Key="errorEmpty">nie może być pusta.\nSpróbuj Ponownie!</system:String>
+    <system:String x:Key="errorNoFlights">nie znalezione. Spróbuj Ponownie!</system:String>
+    <system:String x:Key="errorEmpty">nie może być pusta. Spróbuj Ponownie!</system:String>
     <system:String x:Key="errorTitle">Błąd Wyszukiwania</system:String>
+    <system:String x:Key="errorNoData">Brak informacji o lotach!</system:String>
 
     <!-- Other -->
     <system:String x:Key="airlineName">Linie Lotnicze</system:String>

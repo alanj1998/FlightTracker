@@ -23,9 +23,10 @@
     <system:String x:Key="arrivals">Arrivées</system:String>
 
     <!-- Errors -->
-    <system:String x:Key="errorNoFlights">n'a pas pu être trouvé.\nRéessayer!</system:String>
-    <system:String x:Key="errorEmpty">ne peut pas être vide.\nRéessayer!</system:String>
+    <system:String x:Key="errorNoFlights">n'a pas pu être trouvé.Réessayer!</system:String>
+    <system:String x:Key="errorEmpty">ne peut pas être vide.Réessayer!</system:String>
     <system:String x:Key="errorTitle">Erreur de recherche!</system:String>
+    <system:String x:Key="errorNoData">Aucune information sur les vols!</system:String>
     
     <!-- Success -->
     <system:String x:Key="success">Succès!</system:String>

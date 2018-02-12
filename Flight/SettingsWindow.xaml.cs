@@ -31,6 +31,7 @@ namespace FlightTracker
             cmBoxLanguage.ItemsSource = lang;
         }
 
+
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
@@ -119,6 +120,11 @@ namespace FlightTracker
                 btn12h.Background = red;
                 time = "12h";
             }
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

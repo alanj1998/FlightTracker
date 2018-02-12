@@ -23,9 +23,10 @@
     <system:String x:Key="arrivals">Arrivals</system:String>
     
     <!-- Errors -->
-    <system:String x:Key="errorNoFlights">could not be found.\nTry Again!</system:String>
-    <system:String x:Key="errorEmpty">cannot be empty!\nTry Again!</system:String>
+    <system:String x:Key="errorNoFlights">could not be found. Try Again!</system:String>
+    <system:String x:Key="errorEmpty">cannot be empty! Try Again!</system:String>
     <system:String x:Key="errorTitle">Search Error!</system:String>
+    <system:String x:Key="errorNoData">No Flights Returned!</system:String>
     
     <!-- Success -->
     <system:String x:Key="success">Success!</system:String>

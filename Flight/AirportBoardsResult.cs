@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace FlightTracker
 {
-    class AirportData
+    class AirportBoards
     {
         [JsonProperty("AirportBoardsResult")]
         public FlightData boardsResult { get; set; }

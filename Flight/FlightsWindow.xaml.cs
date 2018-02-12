@@ -29,6 +29,15 @@ namespace FlightTracker
         private List<FlightDetails> arrivalFlights = new List<FlightDetails>();
         private CultureInfo dateFormat;
         private LoadFlightData data;
+        private bool isSet = false;
+
+        public bool IsSet
+        {
+            get
+            {
+                return this.isSet;
+            }
+        }
 
         public FlightsWindow(MainWindow main, string airportCode, string airlineCode = null)
         {
@@ -75,8 +84,9 @@ namespace FlightTracker
                 new FlightDetails(new Flight(DateTime.Now, "FR999", "London"))
         };
         */
-            SetFlights();
-            SetAirportInfo();
+            this.isSet = SetFlights();
+            if (this.isSet)
+                SetAirportInfo();
         }
 
         ~FlightsWindow()
@@ -108,24 +118,36 @@ namespace FlightTracker
             AddFlights(this.arrivalFlights, Arrivals);
         }
 
-        private void SetFlights()
+        private bool SetFlights()
         {
-            const int MAX_NUMBER_PER_PAGE = 7;
-            changeSlide.AutoReset = true;
-            changeSlide.Elapsed += changeSlide_Elapsed;
-
-            departureFlights = data.Arrivals;
+            departureFlights = data.Departures;
             arrivalFlights = data.Arrivals;
-            departureFlights.Sort();
-            arrivalFlights.Sort();
 
-            for (int i = 0; i < MAX_NUMBER_PER_PAGE; i++)
+            if (departureFlights.Count > 0 && arrivalFlights.Count > 0)
             {
-                Departures.Children.Add(departureFlights[i]);
-                Arrivals.Children.Add(arrivalFlights[i]);
-            }
+                const int MAX_NUMBER_PER_PAGE = 7;
+                changeSlide.AutoReset = true;
+                changeSlide.Elapsed += changeSlide_Elapsed;
 
-            changeSlide.Start();
+                this.departureFlights.Sort();
+                this.arrivalFlights.Sort();
+
+                ClearPlace();
+
+                for (int i = 0; i < MAX_NUMBER_PER_PAGE; i++)
+                {
+                    this.Departures.Children.Add(departureFlights[i]);
+                    this.Arrivals.Children.Add(arrivalFlights[i]);
+                }
+
+                changeSlide.Start();
+                return true;
+            }
+            else
+            {
+                this.ErrorMessage();
+                return false;
+            }
         }
 
         private void SetAirportInfo()
@@ -158,9 +180,8 @@ namespace FlightTracker
         {
             Dispatcher.Invoke(() =>
             {
-                int flightsOnDisplay = Departures.Children.Count;
-                Departures.Children.Clear();
-                Arrivals.Children.Clear();
+                this.Departures.Children.Clear();
+                this.Arrivals.Children.Clear();
             });
         }
 
@@ -190,6 +211,11 @@ namespace FlightTracker
                 lastFlightIndex = (this.pageNo + 1) * MAX_NUMBER_PER_PAGE;
 
             return lastFlightIndex;
+        }
+
+        private void ErrorMessage()
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show(Application.Current.Resources["errorNoData"].ToString(), Application.Current.Resources["errorTitle"].ToString(), MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

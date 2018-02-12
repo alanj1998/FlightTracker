@@ -27,6 +27,7 @@
     <system:String x:Key="errorNoFlights">kon niet gevonden worden. Probeer opnieuw!</system:String>
     <system:String x:Key="errorEmpty">mag niet leeg zijn. Probeer opnieuw!</system:String>
     <system:String x:Key="errorTitle">Zoekfout!</system:String>
+    <system:String x:Key="errorNoData">Geen informatie over vluchten!</system:String>
     
     <!-- Success -->
     <system:String x:Key="success">Gelukt!</system:String>

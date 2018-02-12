@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Windows;
+using Newtonsoft.Json;
 
 namespace FlightTracker
 {
@@ -90,10 +91,20 @@ namespace FlightTracker
 
     class Paths
     {
+        [JsonProperty("languageList")]
         private string languageList;
+
+        [JsonProperty("languages")]
         private Dictionary<string, string> languages;
+
+        [JsonProperty("images")]
         private Dictionary<string, string> images;
+
+        [JsonProperty("flightAwareData")]
         private string flightAware;
+
+        [JsonProperty("airports")]
+        private string airports;
 
         public string LanguageList
         {
@@ -128,12 +139,21 @@ namespace FlightTracker
             }
         }
 
-        public Paths(string languageList, Dictionary<string,string> languages, Dictionary<string, string> images, string flightAware)
+        public string Airports
+        {
+            get
+            {
+                return this.airports;
+            }
+        }
+
+        public Paths(string languageList, Dictionary<string,string> languages, Dictionary<string, string> images, string flightAware, string airportData)
         {
             this.languageList = languageList;
             this.languages = languages;
             this.images = images;
             this.flightAware = flightAware;
+            this.airports = airportData;
         }
     }
 
