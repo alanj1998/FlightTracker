@@ -5,19 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightTracker"
         mc:Ignorable="d"
-        Title="Settings" Height="500" Width="300" AllowsTransparency="True" WindowStyle="None" Background="#00000000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="30" Stroke="#FF3892ED" VerticalAlignment="Top" Width="300">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0D68C3" Offset="0"/>
-                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="267,0,2,470" MouseLeftButtonDown="btnClose_Click"/>
-        <Label x:Name="lblTitle" Content="{DynamicResource settings}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="263" Height="30" FontSize="14.667" Margin="0,0,37,470"/>
-        <Rectangle HorizontalAlignment="Left" Height="470" Margin="0,30,0,0" Stroke="#FF3892ED" VerticalAlignment="Top" Width="300">
+        Title="Settings" Height="500" Width="300" AllowsTransparency="True" WindowStyle="None" Background="#00000000" WindowStartupLocation="CenterScreen">
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Height="40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Rectangle HorizontalAlignment="Left" Height="40" Stroke="#FF3892ED" VerticalAlignment="Top" Width="300" Grid.ColumnSpan="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" MouseLeftButtonDown="btnClose_Click" Grid.Column="1"/>
+            <Label x:Name="lblTitle" Content="{DynamicResource settings}" Grid.Column="0"/>
+        </Grid>
+        <Button Content="{DynamicResource save}" Click="Button_Click" DockPanel.Dock="Bottom"/>
+
+        <Rectangle Stroke="#FF3892ED" DockPanel.Dock="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEC3C3C" Offset="0.671"/>
@@ -25,21 +33,28 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+    </DockPanel>
+    <!--
+    <Grid>
+    
+    <Rectangle HorizontalAlignment="Left" Height="135" Margin="10,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="280" StrokeThickness="2" RadiusY="10" RadiusX="10" DockPanel.Dock="Bottom">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0D68C3" Offset="0"/>
+                        <GradientStop Color="#FF3892ED" Offset="0.631"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        
+        
 
-        <Rectangle HorizontalAlignment="Left" Height="135" Margin="10,60,0,0" Stroke="Black" VerticalAlignment="Top" Width="280" StrokeThickness="2" RadiusY="10" RadiusX="10">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0D68C3" Offset="0"/>
-                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+       
         <Label x:Name="lblLanguage" Content="{DynamicResource language}" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="lblClock" Content="{DynamicResource timeFormat}" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top" Width="100"/>
         <TextBlock Margin="98,64,83,0" TextWrapping="Wrap" Text="{DynamicResource locale}" VerticalAlignment="Top" Width="119" Height="20" FontSize="16" Foreground="#FFBB2020" TextDecorations="Underline" HorizontalAlignment="Center" FontStyle="Italic"/>
         <ComboBox x:Name="cmBoxLanguage" HorizontalAlignment="Left" Margin="152,100,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FFC30101" Background="#FFD60000"/>
         <Button Content="12H" x:Name="btn12h" Height="30" Width="60.6" Margin="152,140,87,330" BorderBrush="#00000000" Background="White" Click="hourButton_Clicked"/>
         <Button Content="24H" x:Name="btn24h" Height="30" Width="60.6" Margin="211,140,28,330" BorderBrush="#00000000" Background="White" Click="hourButton_Clicked"/>
-        <Button Content="{DynamicResource save}" HorizontalAlignment="Left" Margin="30,470,0,0" VerticalAlignment="Top" Width="233" Click="Button_Click"/>
     </Grid>
+    -->
 </Window>
