@@ -128,14 +128,10 @@ namespace FlightTracker
 
         private AirportData GetData(string airport, string airline)//Dictionary<string, string> data)
         {
-            const string URL_STRING = "http://flightxml.flightaware.com/json/FlightXML3/AirportBoards";
             AirportData data = new AirportData();
 
-            UriBuilder uriBuilder = new UriBuilder(URL_STRING);
-            uriBuilder.Query += $"airport_code={airport}&filter=airline";
-            Uri url = uriBuilder.Uri;
-
-            string auth = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes("alanj1998:4d5e8497d3ecc47709fce1db7980e4ebcb5fe740")); //Encoding creditentials to base64 like advised by api
+            Uri url = SetURL(airport, (airline != null) ? airline : null);
+            string auth = SetAuthorization();
 
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
             request.Headers.Add(HttpRequestHeader.Authorization, $"Basic {auth}");
@@ -149,6 +145,25 @@ namespace FlightTracker
                 jsonResponse = sr.ReadToEnd();
 
             return JsonConvert.DeserializeObject<AirportData>(jsonResponse);
+        }
+
+        private Uri SetURL(string airport, string airline = null)
+        {
+            const string URL_STRING = "http://flightxml.flightaware.com/json/FlightXML3/AirportBoards";
+
+            UriBuilder uriBuilder = new UriBuilder(URL_STRING);
+            uriBuilder.Query += $"airport_code={airport}&filter=airline";
+            Uri url = uriBuilder.Uri;
+
+            return url;
+        }
+
+        private string SetAuthorization()
+        {
+            Encoding iso = Encoding.GetEncoding("ISO-8859-1"); //set base64 authorization
+            byte[] encoded = iso.GetBytes("alanj1998:4d5e8497d3ecc47709fce1db7980e4ebcb5fe740");
+
+            return Convert.ToBase64String(encoded);
         }
     }
 }
