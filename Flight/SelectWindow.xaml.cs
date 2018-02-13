@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,14 +28,14 @@ namespace FlightTracker
     /// </summary>
     public partial class SelectWindow : Window
     {
-        private MainWindow main;
         private string choice;
-        public SelectWindow(string choice, MainWindow m)
+        private string chosenICAO;
+        public SelectWindow(string choice)
         {
-            this.main = m;
             this.choice = choice;
 
             InitializeComponent();
+            DataContext = AppPaths.Path;
             lblEnter.Content += $" {Application.Current.Resources[this.choice].ToString()}";
         }
 
@@ -61,24 +62,23 @@ namespace FlightTracker
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            string airportCode = txBoxChoice.Text;
+            string airportCode = this.chosenICAO;
 
             if (airportCode.Length > 0)
             {
-                airportCode = new AirportCheckAndConverter(airportCode, choice).ReturnICAOCode();
-
                 if (airportCode != "")
                 {
-                    this.main.Hide();
+                    this.Owner.Hide();
                     this.Close();
 
-                    FlightsWindow flight = new FlightsWindow(main, airportCode);
+                    FlightsWindow flight = new FlightsWindow(airportCode);
+                    flight.Owner = this.Owner;
                     if (flight.IsSet)
                         flight.Show();
                     else
                     {
                         this.Close();
-                        main.Show();
+                        this.Owner.Show();
                     }
                 }
                 else
@@ -100,12 +100,41 @@ namespace FlightTracker
 
         private void btnSearch_MouseEnter(object sender, MouseEventArgs e)
         {
-            Animation.Animate(TextBlock.PaddingProperty, new Thickness(130, 3, 0, 0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = $"...{Application.Current.Resources["search"].ToString()}"; });
+            Animation.Animate(TextBlock.PaddingProperty, new Thickness(200, 3, 0, 0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = $"...{Application.Current.Resources["search"].ToString()}"; });
         }
 
         private void btnSearch_MouseLeave(object sender, MouseEventArgs e)
         {
             Animation.Animate(TextBlock.PaddingProperty, new Thickness(5, 3, 0, 0), sender as TextBlock, new TimeSpan(0, 0, 0, 0, 200), preAnim: (o) => { btnSearch.Text = Application.Current.Resources["search"].ToString(); });
+        }
+
+
+
+        private void lstBoxHints_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Hint data = lstBoxHints.SelectedItem as Hint;
+            if (data != null)
+            {
+                txBoxChoice.Text = data.TownName;
+                this.chosenICAO = data.ICAOCode;
+
+                lstBoxHints.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void txBoxChoice_KeyUp(object sender, KeyEventArgs e)
+        {
+            string typed = txBoxChoice.Text;
+            ObservableCollection<Hint> hints = new AirportLookUp().GetData(choice, typed);
+
+            if (typed.Length > 2)
+            {
+                lstBoxHints.Visibility = Visibility.Visible;
+                lstBoxHints.ItemsSource = hints;
+            }
+
+            else
+                lstBoxHints.Visibility = Visibility.Collapsed;
         }
     }
 }

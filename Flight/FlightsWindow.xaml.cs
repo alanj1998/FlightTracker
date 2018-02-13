@@ -21,7 +21,6 @@ namespace FlightTracker
     /// </summary>
     public partial class FlightsWindow : Window
     {
-        private MainWindow MainMenu;
         private int pageNo = 0;
         private Timer clockTimer = new Timer();
         private Timer changeSlide = new Timer(10000);
@@ -39,7 +38,7 @@ namespace FlightTracker
             }
         }
 
-        public FlightsWindow(MainWindow main, string airportCode, string airlineCode = null)
+        public FlightsWindow(string airportCode, string airlineCode = null)
         {
             InitializeComponent();
 
@@ -50,7 +49,6 @@ namespace FlightTracker
 
 
             lblTime.Content = DateTime.Now.ToString(dateFormat);
-            this.MainMenu = main;
 
             //Setting up the Timer
             clockTimer.Interval = 1000;
@@ -98,7 +96,7 @@ namespace FlightTracker
         private void btnClose_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
-            MainMenu.Show();
+            this.Owner.Show();
         }
 
         private void clockTimer_Elapsed(object sender, ElapsedEventArgs e)

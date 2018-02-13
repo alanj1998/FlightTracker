@@ -1,60 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FlightTracker
 {
-    class AirportCheckAndConverter
+    class AirportLookUp
     {
-        private string data;
-        private string choice;
         private Dictionary<string, AirportData> airportData = JSON.GetJSONData<Dictionary<string, AirportData>>(AppPaths.Path.Airports);
 
-        public AirportCheckAndConverter(string data, string choice)
+        public ObservableCollection<Hint> GetData(string choice, string query)
         {
-            this.data = data;
-            this.choice = choice;
-        }
+            ObservableCollection<Hint> hints = new ObservableCollection<Hint>();
+            Dictionary<string, AirportData> airportDictionary = JSON.GetJSONData<Dictionary<string, AirportData>>(AppPaths.Path.Airports);
+            List<AirportData> list = new List<AirportData>();
 
-        public string ReturnICAOCode()
-        {
-            string ICAO = "";
+            if (choice == "airportID" && query.Length <= 4)
+                list = airportDictionary.Where(x => x.Key.ToUpper().Contains(query.ToUpper())).Select(x => x.Value).ToList();
+            else if(choice == "airportName")
+                list = airportDictionary.Where(x => x.Value.City.ToUpper().Contains(query.ToUpper())).Select(x => x.Value).ToList();
 
-            if (choice == "airportID")
-                ICAO = CheckICAO();
-            else
-                ICAO = ConvertFromName();
-
-            return ICAO;     
-        }
-
-        public string ConvertFromName()
-        {
-            bool isAValidName = airportData.Any(x => x.Value.Name.ToUpper() == this.data.ToUpper() || x.Value.City.ToUpper() == this.data.ToUpper());
-
-            if (isAValidName)
+            foreach (AirportData ad in list)
             {
-                KeyValuePair<string, AirportData> index = airportData.FirstOrDefault(x => x.Value.Name.ToUpper() == this.data.ToUpper() || x.Value.City.ToUpper() == this.data.ToUpper());
-                return index.Value.ICAO;
+                Hint hint = new Hint(ad.City.Trim(new char[] { ' ' }), ad.ICAO, $"Assets/Flags/{ad.CountryCode.ToLower()}.png");
+                hints.Add(hint);
             }
-            else
-                return "";
-        }
 
-        public string CheckICAO()
-        {
-            if(this.data.Length == 4)
-            {
-                bool isValid = airportData.Any(x => x.Value.ICAO == this.data.ToUpper());
+            return hints;
 
-                if (isValid)
-                    return airportData.FirstOrDefault(x => x.Value.ICAO == this.data).Value.ICAO;
-                else
-                    return "";                    
-            }
-            return "";
         }
     }
 }

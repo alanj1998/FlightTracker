@@ -17,5 +17,8 @@ namespace FlightTracker
 
         [JsonProperty("city")]
         public string City { get; set; }
+
+        [JsonProperty("country")]
+        public string CountryCode { get; set; }
     }
 }

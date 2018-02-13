@@ -3,7 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FlightTracker"
              StartupUri="MainWindow.xaml">
+    
     <Application.Resources>
-         
+        <!-- Red Gradient used throughout programme -->
+        <LinearGradientBrush x:Key="redGradient"  EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFEC3C3C" Offset="0.671"/>
+            <GradientStop Color="#CCE00000" Offset="0.936"/>
+        </LinearGradientBrush>
+
+        <!-- Blue Gradient used throughtout programme -->
+        <LinearGradientBrush x:Key="blueGradient" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF0D68C3" Offset="0"/>
+            <GradientStop Color="#FF3892ED" Offset="0.631"/>
+        </LinearGradientBrush>
+
+        <!-- Transparent Color -->
+        <SolidColorBrush Color="#00000000" Opacity="0" x:Key="transparentFill"></SolidColorBrush>
+
+        <!-- Hint list made for hinting during typing of -->
+        <DataTemplate x:Key="hintList">
+            <StackPanel Orientation="Vertical">
+                <Grid Height="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Column="0" Source="{Binding PathToImage}"></Image>
+                    <TextBlock Grid.Column="1" x:Name="txBlockNameOfTown" Text="{Binding ICAOCode}"
+                               Padding="20,5"></TextBlock>
+                    <TextBlock Grid.Column="2" x:Name="txBlockICAO" Text="{Binding TownName}"
+                               Padding="20,5"></TextBlock>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
     </Application.Resources>
 </Application>

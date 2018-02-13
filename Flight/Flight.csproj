@@ -70,6 +70,7 @@
     <Compile Include="FlightsWindow.xaml.cs">
       <DependentUpon>FlightsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Hint.cs" />
     <Compile Include="JSON.cs" />
     <Compile Include="LoadData.cs" />
     <Compile Include="SelectWindow.xaml.cs">
@@ -79,6 +80,9 @@
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="TEST.xaml.cs">
+      <DependentUpon>TEST.xaml</DependentUpon>
+    </Compile>
     <Page Include="Assets\Languages\nl-NL.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -140,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TEST.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

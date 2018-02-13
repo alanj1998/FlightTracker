@@ -190,12 +190,14 @@ namespace FlightTracker
             if (temp.Name == "btnSettings")
             {
                 SettingsWindow window = new SettingsWindow();
+                window.Owner = this;
                 window.ShowDialog();
             }
             else
             {
                 
-                SelectWindow w = new SelectWindow(choice, this);
+                SelectWindow w = new SelectWindow(choice);
+                w.Owner = this;
                 w.ShowDialog();
             }
         }

@@ -5,55 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightTracker"
         mc:Ignorable="d"
-        Title="Flights Options" Height="123" Width="487" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Unloaded="Window_Unloaded" AllowsTransparency="True" WindowStyle="None">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="#FFEC3C3C" Offset="0.671"/>
-            <GradientStop Color="#CCE00000" Offset="0.936"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        Title="Flights Options" Height="130" Width="490" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Unloaded="Window_Unloaded" AllowsTransparency="True" WindowStyle="None" Background="{StaticResource redGradient}">
     <Grid>
-        <!-- Layout of the Window -->
-        <Rectangle HorizontalAlignment="Left" Height="30" Stroke="#FF3892ED" VerticalAlignment="Top" Width="487">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0D68C3" Offset="0"/>
-                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="265,41,0,0">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0D68C3" Offset="0"/>
-                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Image x:Name="btnClose" Source="Assets/Images/exitLogo.png" RenderOptions.BitmapScalingMode="HighQuality" Margin="447,0,0,93" MouseLeftButtonDown="btnClose_Click"></Image>
-        <Label x:Name="lblTitle" Content="{DynamicResource titleSelect}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="324" Height="30" FontSize="14.667" Margin="10,0,153,93"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <!-- Controls -->
-        <Label x:Name="lblEnter" Content="{DynamicResource enter}" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="240" Height="26"/>
-        <TextBox x:Name="txBoxChoice" HorizontalAlignment="Left" Height="26" Margin="265,42,0,0" TextWrapping="Wrap" Text="" Padding="3,3,0,0" VerticalAlignment="Top" Width="206">
-            <TextBox.Background>
-                <SolidColorBrush Color="#00000000" Opacity="0"/>
-            </TextBox.Background>
-            <TextBox.BorderBrush>
-                <SolidColorBrush Color="#00000000" Opacity="0"/>
-            </TextBox.BorderBrush>
-            <TextBox.SelectionBrush>
-                <SolidColorBrush Opacity="0"/>
-            </TextBox.SelectionBrush>
-        </TextBox>
-        <Rectangle HorizontalAlignment="Left" Height="28" Stroke="#FF3892ED" VerticalAlignment="Top" Width="206" Margin="148,81,0,0">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0D68C3" Offset="0"/>
-                    <GradientStop Color="#FF3892ED" Offset="0.631"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle 
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+            Stroke="#FF3892ED" Fill="{StaticResource blueGradient}">
         </Rectangle>
-        <TextBlock x:Name="btnSearch" HorizontalAlignment="Left" Margin="148,81,0,0" TextWrapping="Wrap" Text="{DynamicResource search}" VerticalAlignment="Top" Height="28" Width="206" FontSize="16" Padding="5,3,0,0" MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
+        <Image x:Name="btnClose" Grid.Column="2" Grid.Row="0"
+               Source="{Binding Path=Images[Exit]}" RenderOptions.BitmapScalingMode="HighQuality" 
+               MouseLeftButtonDown="btnClose_Click">
+        </Image>
+        <Label x:Name="lblTitle" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
+               Content="{DynamicResource titleSelect}"/>
+
+        <Rectangle Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1" Margin="15"
+                   Stroke="#FF3892ED" Fill="{StaticResource blueGradient}"/>
+        <TextBox x:Name="txBoxChoice" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1" Margin="15"
+                 Background="{StaticResource transparentFill}" BorderBrush="{StaticResource transparentFill}" SelectionBrush="{StaticResource transparentFill}" 
+                 TextWrapping="Wrap" Text="" Padding="3,3,0,0" KeyUp="txBoxChoice_KeyUp"/>
+
+        <Label x:Name="lblEnter" Grid.Column="0" Grid.RowSpan="2" Grid.Row="1" Margin="15"
+               Content="{DynamicResource enter}"/>
+
+        <Rectangle Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Margin="100, 0, 100, 10"
+                   Stroke="#FF3892ED" Fill="{StaticResource blueGradient}"/>
+        <TextBlock x:Name="btnSearch" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Margin="100, 0, 100, 10"
+                   TextWrapping="Wrap" Text="{DynamicResource search}" Padding="5,3,0,0" 
+                   MouseEnter="btnSearch_MouseEnter" MouseLeave="btnSearch_MouseLeave" MouseLeftButtonDown="btnSearch_Click"/>
+
+        <ListBox x:Name="lstBoxHints" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="2" 
+                 Margin="15,15,15,0" Visibility="Collapsed"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 ItemTemplate="{StaticResource hintList}" SelectionChanged="lstBoxHints_SelectionChanged"/>
     </Grid>
 </Window>
