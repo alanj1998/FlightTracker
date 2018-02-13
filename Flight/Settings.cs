@@ -106,6 +106,8 @@ namespace FlightTracker
         [JsonProperty("airports")]
         private string airports;
 
+        private Dictionary<string, string> flags;
+
         public string LanguageList
         {
             get
@@ -147,13 +149,22 @@ namespace FlightTracker
             }
         }
 
-        public Paths(string languageList, Dictionary<string,string> languages, Dictionary<string, string> images, string flightAware, string airportData)
+        public Dictionary<string, string> Flags
+        {
+            get
+            {
+                return this.flags;
+            }
+        }
+
+        public Paths(string languageList, Dictionary<string,string> languages, Dictionary<string, string> images, string flightAware, string airportData, Dictionary<string, string> flags)
         {
             this.languageList = languageList;
             this.languages = languages;
             this.images = images;
             this.flightAware = flightAware;
             this.airports = airportData;
+            this.flags = flags;
         }
     }
 
