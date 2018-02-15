@@ -27,7 +27,12 @@
     <system:String x:Key="errorEmpty">cannot be empty! Try Again!</system:String>
     <system:String x:Key="errorTitle">Search Error!</system:String>
     <system:String x:Key="errorNoData">No Flights Returned!</system:String>
-    
+    <system:String x:Key="proxyError">Proxy Related Error! Please turn of your proxy and try again!</system:String>
+    <system:String x:Key="timeoutError">The request took too long to send. Check your internet connection and try again!</system:String>
+    <system:String x:Key="genericError">There has been an unexpected error. Try Again later!</system:String>
+    <system:String x:Key="requestError">There has been an error with your request! Re - enter your details and try again!</system:String>
+    <system:String x:Key="serverError">The server is unresponsive. Try again later!</system:String>
+
     <!-- Success -->
     <system:String x:Key="success">Success!</system:String>
     <system:String x:Key="successSave">Settings Saved Successfully!</system:String>

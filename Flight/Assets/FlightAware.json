@@ -1,6 +1,5 @@
 ﻿{
   "API_KEY": "4d5e8497d3ecc47709fce1db7980e4ebcb5fe740",
   "LOGIN": "alanj1998",
-  "START_URL": "http://flightxml.flightaware.com/json/FlightXML3",
-  "REQ_LEFT":  495
+  "START_URL": "http://flightxml.flightaware.com/json/FlightXML3"
 }

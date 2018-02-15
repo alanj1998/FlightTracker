@@ -63,6 +63,7 @@
     <Compile Include="AirportCheckAndConverter.cs" />
     <Compile Include="AirportData.cs" />
     <Compile Include="Animate.cs" />
+    <Compile Include="ErrorClass.cs" />
     <Compile Include="Flight.cs" />
     <Compile Include="FlightDetails.xaml.cs">
       <DependentUpon>FlightDetails.xaml</DependentUpon>

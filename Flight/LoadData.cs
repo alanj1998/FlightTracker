@@ -47,11 +47,14 @@ namespace FlightTracker
 
         private void SplitData(AirportBoards data)
         {
-            AddToLists(data.boardsResult.Arrivals.Flights, this.arrivals);
-            AddToLists(data.boardsResult.EnRoute.Flights, this.arrivals);
-            AddToLists(data.boardsResult.Departures.Flights, this.departures);
-            AddToLists(data.boardsResult.Scheduled.Flights, this.departures);
-            this.info = data.boardsResult.Info;
+            if (data != null)
+            {
+                AddToLists(data.boardsResult.Arrivals.Flights, this.arrivals);
+                AddToLists(data.boardsResult.EnRoute.Flights, this.arrivals);
+                AddToLists(data.boardsResult.Departures.Flights, this.departures);
+                AddToLists(data.boardsResult.Scheduled.Flights, this.departures);
+                this.info = data.boardsResult.Info;
+            }
         }
 
         private void AddToLists<T>(List<T> data, List<FlightDetails> listToAddTo)
@@ -126,7 +129,7 @@ namespace FlightTracker
                 return town;
         }
 
-        private AirportBoards GetData(string airport, string airline)//Dictionary<string, string> data)
+        private AirportBoards GetData(string airport, string airline)
         {
             AirportBoards data = new AirportBoards();
 
@@ -140,9 +143,25 @@ namespace FlightTracker
 
             string jsonResponse = "";
 
-            using (WebResponse response = request.GetResponse())
-            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
-                jsonResponse = sr.ReadToEnd();
+            try
+            {
+                using (WebResponse response = request.GetResponse())
+                using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+                    jsonResponse = sr.ReadToEnd();
+            }
+            catch(WebException ex)
+            {
+                HttpStatusCode? code = (ex.Response as HttpWebResponse)?.StatusCode;
+                
+
+                if(code != null)
+                {
+                    ErrorClass err = new ErrorClass();
+                    err.InvokeErrorMessage(code);   
+                }
+
+
+            }
 
             return JsonConvert.DeserializeObject<AirportBoards>(jsonResponse);
         }
