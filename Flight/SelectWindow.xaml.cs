@@ -35,7 +35,7 @@ namespace FlightTracker
             this.choice = choice;
 
             InitializeComponent();
-            DataContext = AppPaths.Path;
+            this.btnClose.DataContext = AppPaths.Path;
             lblEnter.Content += $" {Application.Current.Resources[this.choice].ToString()}";
         }
 
@@ -62,33 +62,38 @@ namespace FlightTracker
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            string airportCode = this.chosenICAO;
-
-            if (airportCode.Length > 0)
+            if (!IsEnabled)
+                MessageBox.Show("Pick Place from List First!", "Choose Place", MessageBoxButton.OK, MessageBoxImage.Error);
+            else
             {
-                if (airportCode != "")
-                {
-                    this.Owner.Hide();
-                    this.Close();
+                string airportCode = this.chosenICAO;
 
-                    FlightsWindow flight = new FlightsWindow(airportCode);
-                    flight.Owner = this.Owner;
-                    if (flight.IsSet)
-                        flight.Show();
+                if (airportCode.Length > 0)
+                {
+                    if (airportCode != "")
+                    {
+                        this.Owner.Hide();
+                        this.Close();
+
+                        FlightsWindow flight = new FlightsWindow(airportCode);
+                        flight.Owner = this.Owner;
+                        if (flight.IsSet)
+                            flight.Show();
+                        else
+                        {
+                            this.Close();
+                            this.Owner.Show();
+                        }
+                    }
                     else
                     {
-                        this.Close();
-                        this.Owner.Show();
+                        this.ErrorMessage(false);
                     }
                 }
                 else
                 {
-                    this.ErrorMessage(false);
+                    this.ErrorMessage(true);
                 }
-            }
-            else
-            {
-                this.ErrorMessage(true);
             }
         }
 
@@ -119,6 +124,7 @@ namespace FlightTracker
                 this.chosenICAO = data.ICAOCode;
 
                 lstBoxHints.Visibility = Visibility.Collapsed;
+                this.btnSearch.IsEnabled = true;
             }
         }
 
