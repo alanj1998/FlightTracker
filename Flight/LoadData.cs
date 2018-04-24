@@ -180,7 +180,7 @@ namespace FlightTracker
         private string SetAuthorization()
         {
             Encoding iso = Encoding.GetEncoding("ISO-8859-1"); //set base64 authorization
-            byte[] encoded = iso.GetBytes("alanj1998:4d5e8497d3ecc47709fce1db7980e4ebcb5fe740");
+            byte[] encoded = iso.GetBytes("flighthelper1998:d26d433b7a6bf91bce01bbabecab1fc9e557278e");
 
             return Convert.ToBase64String(encoded);
         }

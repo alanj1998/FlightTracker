@@ -127,11 +127,6 @@ namespace FlightTracker
                 message = Application.Current.Resources["clickAirportName"].ToString();
                 source = AppPaths.Path.Images["Airport Name"];
             }
-            else if (name == "btnAirline")
-            {
-                message = Application.Current.Resources["clickAirline"].ToString();
-                source = AppPaths.Path.Images["Airline Name"];
-            }
             else if (name == "btnSettings")
             {
                 message = Application.Current.Resources["settings"].ToString();
@@ -181,9 +176,6 @@ namespace FlightTracker
                     break;
                 case "btnAirportIDCheck":
                     choice = "airportID";
-                    break;
-                case "btnAirline":
-                    choice = "airlineName";
                     break;
             }
 
