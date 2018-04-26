@@ -102,10 +102,15 @@ namespace FlightTracker
         private void clockTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             //Using Dispatcher to update the UI thread
-            Dispatcher.Invoke(() =>
+            try
             {
-                lblTime.Content = DateTime.Now.ToString(dateFormat);
-            });
+                Dispatcher.Invoke(() =>
+                {
+                    lblTime.Content = DateTime.Now.ToString(dateFormat);
+                });
+            }
+            catch (Exception ex) { }
+
         }
 
         private void changeSlide_Elapsed(object sender, ElapsedEventArgs e)
