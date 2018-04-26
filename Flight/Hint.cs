@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightTracker
 {
+    //Class used as interface for the hint
     class Hint
     {
         public string TownName { get; set; }

@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace FlightTracker
 {
-    static class UserSettings
+    class UserSettings
     {
         private static string language,
                               timeType;
@@ -39,6 +39,8 @@ namespace FlightTracker
             }
         }
 
+
+        //Method used to set the users settings
         public static void SetUserSettings()
         {
             Dictionary<string, string> data = JSON.GetJSONData<Dictionary<string, string>>(UserSettings.PATH_TO_SETTINGS);
@@ -46,6 +48,8 @@ namespace FlightTracker
             timeType = data["Time"].ToString();
         }
 
+
+        //Method used to update user settings
         public static bool UpdateUserSettings(string value, string setting)
         {
             if (typeof(UserSettings).GetProperties().Select(x => x.Name.ToUpper()).Contains(setting.ToUpper()))
@@ -71,7 +75,8 @@ namespace FlightTracker
         Language, Time
     }
 
-    static class AppPaths
+    
+    class AppPaths
     {
         private static Paths path;
 
@@ -168,7 +173,7 @@ namespace FlightTracker
         }
     }
 
-    static class AppSettings
+    class AppSettings
     {
         public static void SetResourceFile(string Language)
         {

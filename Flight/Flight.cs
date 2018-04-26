@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FlightTracker
 {
+    /// <summary>
+    /// Class used to hold Flight Information which is then displayed in the FlightsWindow
+    /// </summary>
     public class Flight
     {
         private DateTime dateAndTime;
@@ -49,6 +52,8 @@ namespace FlightTracker
             this.dateAndTime = DateTime.Parse(date + " " + time);
             this.flightCode = flightCode;
             this.town = town;
+
+            //If no logo is provided to a flight, set a default logo
             if (logo == null)
                 this.pathToLogo = new Uri(AppPaths.Path.Images["Airline Name"], UriKind.Relative);
             else

@@ -8,6 +8,9 @@ using System.IO;
 
 namespace FlightTracker
 {
+    /// <summary>
+    /// Class used to load in flight data
+    /// </summary>
     class LoadFlightData
     {
         private List<FlightDetails> arrivals = new List<FlightDetails>();
@@ -39,12 +42,17 @@ namespace FlightTracker
             }
         }
 
+        /// <summary>
+        /// Method used to LoadData
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="airline"></param>
         public LoadFlightData(string code, string airline = null)
         {
             SplitData(GetData(code, airline));            
-            //     AirportData data = JSON.GetJSONData<AirportData>("Assets/testData.json");
         }
 
+        //Method used to split data into departures and arrivals
         private void SplitData(AirportBoards data)
         {
             if (data != null)
@@ -57,6 +65,8 @@ namespace FlightTracker
             }
         }
 
+
+        //Method to split data into lists
         private void AddToLists<T>(List<T> data, List<FlightDetails> listToAddTo)
         {
             foreach (T f in data)
@@ -121,6 +131,7 @@ namespace FlightTracker
             }
         }
 
+        //Method used to take in city name
         private string SplitTownName(string town)
         {
             if (town.Contains(','))
@@ -129,6 +140,7 @@ namespace FlightTracker
                 return town;
         }
 
+        //Method used to make a http request to the server
         private AirportBoards GetData(string airport, string airline)
         {
             AirportBoards data = new AirportBoards();
@@ -166,6 +178,7 @@ namespace FlightTracker
             return JsonConvert.DeserializeObject<AirportBoards>(jsonResponse);
         }
 
+        //Method used to build the url to the request
         private Uri SetURL(string airport, string airline = null)
         {
             const string URL_STRING = "http://flightxml.flightaware.com/json/FlightXML3/AirportBoards";
@@ -177,6 +190,7 @@ namespace FlightTracker
             return url;
         }
 
+        //Method used to set base64 auth to the request
         private string SetAuthorization()
         {
             Encoding iso = Encoding.GetEncoding("ISO-8859-1"); //set base64 authorization

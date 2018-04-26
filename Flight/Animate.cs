@@ -17,7 +17,7 @@ namespace FlightTracker
             Takes in the Property to be animated, Value of animation, the object to be animated, timespan of the animation and two optionals: method to be perforemd before animation and a method to be performed after the animation 
         */
 
-        //Animating an Ellipse with a double based dependence
+        //Animating an UI Elemenet with a double based dependence
         static public void Animate(DependencyProperty dp, double value, UIElement obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
         {
             DoubleAnimation anim = new DoubleAnimation(value, t);
@@ -29,6 +29,7 @@ namespace FlightTracker
             obj.BeginAnimation(dp, anim);
         }
 
+        //Animate an UI Element with a thickness based dependence
         static public void Animate(DependencyProperty dp, Thickness value, UIElement obj, TimeSpan t, Action<object> preAnim = null, Action<object> postAnim = null)
         {
             ThicknessAnimation anim = new ThicknessAnimation(value, t);

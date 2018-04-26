@@ -42,12 +42,13 @@ namespace FlightTracker
         {
             InitializeComponent();
 
+            //If the usersettings contain 12h - set the time to AM/PM else set it to 24H system
             if (UserSettings.Time == "12h")
                 dateFormat = new CultureInfo("en-UK");
             else
                 dateFormat = new CultureInfo("pl-PL");
 
-
+            //Set the time to the label
             lblTime.Content = DateTime.Now.ToString(dateFormat);
 
             //Setting up the Timer
@@ -56,37 +57,16 @@ namespace FlightTracker
             clockTimer.AutoReset = true;
             clockTimer.Start();
 
+            //Load flight data
             data = new LoadFlightData(airportCode, airlineCode);
 
-            /* Test Data
-            departureFlights = new List<FlightDetails>() {
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Barcelona")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Mad")),
-                new FlightDetails(new Flight(DateTime.Now.AddHours(-9), "FR999", "Sligo")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Dublin")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Luton")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Amsterdam")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Warsaw")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Rzeszow")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "London"))
-        };
-            arrivalFlights = new List<FlightDetails>() {
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Barcelona")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Mad")),
-                new FlightDetails(new Flight(DateTime.Now.AddHours(-2), "FR999", "Sligo")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Dublin")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Luton")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Amsterdam")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Warsaw")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "Rzeszow")),
-                new FlightDetails(new Flight(DateTime.Now, "FR999", "London"))
-        };
-        */
+            //Set flights
             this.isSet = SetFlights();
             if (this.isSet)
                 SetAirportInfo();
         }
 
+        //Upon destruction delete all timers
         ~FlightsWindow()
         {
             this.clockTimer.Dispose();
@@ -108,6 +88,7 @@ namespace FlightTracker
             });
         }
 
+        //When there is time to change the slide, clear all flights and add next 7 flights to the page
         private void changeSlide_Elapsed(object sender, ElapsedEventArgs e)
         {
             ClearPlace();
@@ -116,6 +97,7 @@ namespace FlightTracker
             AddFlights(this.arrivalFlights, Arrivals);
         }
 
+        //Set flights to the Collection of flights
         private bool SetFlights()
         {
             departureFlights = data.Departures;
@@ -148,6 +130,7 @@ namespace FlightTracker
             }
         }
 
+        //Set info of the airport
         private void SetAirportInfo()
         {
             txBlockAirportID.Text = data.AirportInfo.AirportCode;
@@ -155,6 +138,7 @@ namespace FlightTracker
             txBlockAirportName.Text = data.AirportInfo.AirportName;
         }
 
+        //Method used to change the flight
         private void ChangePage()
         {
             double noOfFlights = 0;
@@ -174,6 +158,7 @@ namespace FlightTracker
                 this.pageNo++;
         }
 
+        //Method used to clear out the StackPanel of events
         private void ClearPlace()
         {
             Dispatcher.Invoke(() =>
@@ -183,6 +168,7 @@ namespace FlightTracker
             });
         }
 
+        //Add Flights to the stackpanel
         private void AddFlights(List<FlightDetails> l, StackPanel type)
         {
             const int MAX_NUMBER_PER_PAGE = 7;
@@ -198,6 +184,7 @@ namespace FlightTracker
 
         }
 
+        //Used to get the index of the flight object
         private int GetLastIndex()
         {
             const int MAX_NUMBER_PER_PAGE = 7;
@@ -211,6 +198,7 @@ namespace FlightTracker
             return lastFlightIndex;
         }
 
+        //Displaying error messages
         private void ErrorMessage()
         {
             MessageBoxResult messageBoxResult = MessageBox.Show(Application.Current.Resources["errorNoData"].ToString(), Application.Current.Resources["errorTitle"].ToString(), MessageBoxButton.OK, MessageBoxImage.Error);

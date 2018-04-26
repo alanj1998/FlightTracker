@@ -17,14 +17,6 @@ namespace FlightTracker
 {
     /// <summary>
     /// Interaction logic for SelectWindow.xaml
-    /// 
-    /// Left To Do:
-    /// 1. Match Airline Codes to Images
-    /// 2. Match SelectWindow Data to flightsearch
-    /// 3. Comment Code, change names
-    /// 4. Sort out folder design
-    /// 5. Change WPF design to implement panels
-    /// 
     /// </summary>
     public partial class SelectWindow : Window
     {
@@ -44,6 +36,7 @@ namespace FlightTracker
             this.Close();
         }
 
+        //Method used to display error messages
         public void ErrorMessage(bool isEmpty)
         {
             if (!isEmpty)
@@ -60,14 +53,17 @@ namespace FlightTracker
             }
         }
 
+        //Search button logic
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            //If the user didn't choose a location
             if (!IsEnabled)
                 MessageBox.Show("Pick Place from List First!", "Choose Place", MessageBoxButton.OK, MessageBoxImage.Error);
             else
             {
                 string airportCode = this.chosenICAO;
 
+                //When there is more than one char in the box
                 if (airportCode.Length > 0)
                 {
                     if (airportCode != "")

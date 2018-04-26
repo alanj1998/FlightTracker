@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 
 namespace FlightTracker
 {
+    /// <summary>
+    /// Class used to deserialise Airport Data
+    /// </summary>
     class AirportData
     {
         [JsonProperty("icao")]

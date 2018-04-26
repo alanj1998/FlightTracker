@@ -8,10 +8,19 @@ using System.Windows;
 
 namespace FlightTracker
 {
+    /// <summary>
+    /// Error Class used to show error messages.
+    /// Created to show web errors
+    /// </summary>
     class ErrorClass
     {
+        /// <summary>
+        /// Method used to show the error message
+        /// </summary>
+        /// <typeparam name="TypeOfError"></typeparam>
+        /// <param name="error"></param>
         public void InvokeErrorMessage<TypeOfError>(TypeOfError error)
-        {
+        {      
             string errorTitle = Application.Current.Resources["errorTitle"].ToString(),
                    errorText = "";
                         
@@ -24,6 +33,11 @@ namespace FlightTracker
             MessageBox.Show(errorText, errorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
+        /// <summary>
+        /// Method used to sort out the message related to web errors
+        /// </summary>
+        /// <param name="error"></param>
+        /// <returns></returns>
         private string GetWebError(HttpStatusCode? error)
         {
             string message = "";

@@ -30,6 +30,7 @@ namespace FlightTracker
             SetFlightInfo();
         }
 
+        //Compare flights
         public int CompareTo(object obj)
         {
             FlightDetails temp = obj as FlightDetails;

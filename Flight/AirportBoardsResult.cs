@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
+/// <summary>
+/// This file is used to deserialise the JSON coming from
+/// the FlightAwareApi
+/// </summary>
 namespace FlightTracker
 {
     class AirportBoards
